@@ -2,31 +2,24 @@
 <html>
 <head>
     <meta charset="utf-8" />
-    <title>Game Page</title>
+    <title>Phish Detective</title>
     <link href="GamePage.css" rel="stylesheet" />
 </head>
 <body>
     <script src="GamePage.js"></script>
     <div>You made it to the game!</div>
     <p id="name"></p>
-    <div class="row" id="headBanner">
-        <div>
-            Phish Detective
-            <button>Red</button>
-            <button>Yellow</button>
-            <button>Green</button>
-        </div>
-        
-    </div>
-    <span>Question ?</span>
+    <div>Question <span id="QuestionNumber"></span> / 10</div>
     <div class="row">
-        <div>Situation Context goes here</div>
-        <div>Email is displayed here</div>
+        <div id="Context"> Situation Context goes here <span id="ChoiceSelected"></span> </div>
+        <div id="Email"> Email is displayed here </div>
     </div>
 
     <div class="row">
-        <button>Phish</button>
-        <button>Real</button>
+        <button id="Phish_button" onclick="phishClick()">Phish</button>
+        <button id="Real_button" onclick="realClick()">Real</button>
     </div>
+
+    
 </body>
 </html>
