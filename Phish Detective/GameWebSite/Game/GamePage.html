@@ -6,20 +6,17 @@
     <link href="GamePage.css" rel="stylesheet" />
 </head>
 <body>
-    <script src="GamePage.js"></script>
+    <script type="module" src="GamePage.js"></script>
     <div>You made it to the game!</div>
     <p id="name"></p>
-    <div>Question <span id="QuestionNumber"></span> / 10</div>
+    <div class="Question_Banner">Question <span id="QuestionNumber"></span> / 10</div>
     <div class="row">
         <div id="Context"> Situation Context goes here <span id="ChoiceSelected"></span> </div>
         <div id="Email"> Email is displayed here </div>
     </div>
-
     <div class="row">
-        <button id="Phish_button" onclick="phishClick()">Phish</button>
-        <button id="Real_button" onclick="realClick()">Real</button>
+        <button type="button" id="Phish_button" onclick="phishClick()">Phish</button>
+        <button type="button" id="Real_button" onclick="realClick()">Real</button>
     </div>
-
-    
 </body>
 </html>

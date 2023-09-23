@@ -1,2 +1,7 @@
-﻿body {
+﻿.body {
+  background-color: blueviolet;
+}
+
+.Question_Banner {
+  background-color: rgb(10, 171, 171);
 }
