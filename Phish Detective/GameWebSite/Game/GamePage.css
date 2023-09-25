@@ -1,0 +1,15 @@
+﻿.body {
+  background-color: blueviolet;
+}
+
+.Question_Banner {
+  background-color: rgb(10, 171, 171);
+}
+
+.Context {
+    max-width: 200px;
+}
+
+.Email {
+  max-width: 500px;
+}

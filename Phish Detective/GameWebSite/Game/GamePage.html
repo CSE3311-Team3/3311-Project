@@ -1,0 +1,26 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Phish Detective</title>
+    <link href="GamePage.css" rel="stylesheet" />
+</head>
+<body>
+    <script type="module" src="GamePage.js"></script>
+    <div>You made it to the game!</div>
+    <p id="name"></p>
+    <div class="Question_Banner">Question <span id="QuestionNumber"></span> / 10</div>
+    <div class="row" max-width="1000px">
+        <div class="Context"> Situation Context goes here <span id="ChoiceSelected"></span> </div>
+        <div class="Email" id="iframe"> Email is displayed here 
+            <iframe id="testFrame1" src="TestEmail.html" ></iframe>
+            <iframe id="testFrame2" src="TestEmail2.html"></iframe>
+        </div>
+    </div>
+    
+    <div class="row">
+        <button type="button" id="Phish_button">Phish</button>
+        <button type="button" id="Real_button">Real</button>
+    </div>
+</body>
+</html>
