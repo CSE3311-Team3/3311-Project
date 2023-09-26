@@ -1,17 +1,17 @@
 import { Email } from "./Email.js";
 
 var testEmail;
+const answers = new Map();
+
 
 window.addEventListener('load', () => {
-    const playerName = localStorage.getItem('playerName');
-    document.getElementById("name").innerHTML = playerName;
     document.getElementById("Phish_button").addEventListener("click", phishClick);
     document.getElementById("Real_button").addEventListener("click", realClick);
+    document.getElementById("Next_button").addEventListener("click", nextClick);
+    document.getElementsById("Prev_button").addEventListener("click", prevClick);
     testEmail = new Email(playerName, "Any Sender");
     console.log(testEmail);
 }) 
-
-const answers = new Map();
 
 function phishClick() {
     document.getElementById("ChoiceSelected").innerHTML = "Phish Button was selected.";
