@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Phish Detective</title>
+    <link href="GamePage.css" rel="stylesheet"/>
+</head>
+<body>
+    <script type="text/javascript" src="GamePage.js"></script>
+
+    <div class = "game_name">Phish Detective</div>
+    
+    <div class="Question_Banner"><span id="QuestionNumber">1</span> /10</div>
+    <div class="selected_choice" id="ChoiceSelected"></div>
+    <div class="context_email">
+        <div class="context_area" id="Context"> You are a Verizon customer who has to pay your cellular service bill every month.</div>
+        <div class="email_area" id="Email"><iframe id="email_temp" class = samp_email src="email_template.html"></iframe></div>
+    </div>
+    <div class="selections">
+        <button class="prev_button" type="button" id="Prev_button" onclick="prevClick()">PREV</button>
+        <button class="phish_button" type="button" id="Phish_button" onclick="phishClick()">PHISH</button>
+        <button class="real_button" type="button" id="Real_button" onclick="realClick()">REAL</button>
+        <button class="next_button" type="button" id="Next_button" onclick="nextClick()">NEXT</button>
+    </div>
+    <script>
+        const answers = new Map();
+
+        function phishClick() {
+            document.getElementById("ChoiceSelected").innerHTML = "Phish Button was selected.";
+            setting_answer('p');
+        }
+
+        function realClick() {
+            document.getElementById("ChoiceSelected").innerHTML = "Real Button was selected.";
+            setting_answer('r');
+        }
+
+        function setting_answer(choice) {
+            var quest_num = parseInt(document.getElementById("QuestionNumber").innerHTML);
+            answers.set(quest_num,choice);
+        }
+
+        function nextClick() {
+            updateQuestion("next");
+            tracking_answer();
+        }
+
+        function prevClick() {
+            updateQuestion("prev");
+            tracking_answer();
+        }
+
+        function tracking_answer() {
+            var quest_num = parseInt(document.getElementById("QuestionNumber").innerHTML);
+            var answer = answers.get(quest_num);
+            if(answer == 'p') {
+                document.getElementById("ChoiceSelected").innerHTML = "Phish Button was selected.";
+            }
+            else if(answer == 'r') {
+                document.getElementById("ChoiceSelected").innerHTML = "Real Button was selected.";
+            }
+            else {
+                document.getElementById("ChoiceSelected").innerHTML = "";
+            }
+        }
+
+        function updateQuestion(dir) {
+            var quest_num = parseInt(document.getElementById("QuestionNumber").innerHTML);
+            if(dir === "next") {
+                quest_num = quest_num + 1;
+                if(quest_num == 10) {
+                    document.getElementById("Next_button").innerHTML = "FINISH";
+                }
+                if(quest_num > 10) {
+                    window.location.href = "../EndScreen/EndScreen.html";
+                }
+            }
+            if(dir === "prev") {
+                quest_num = quest_num - 1;
+                if(quest_num < 10) {
+                    document.getElementById("Next_button").innerHTML = "NEXT";
+                }
+            }
+            if(quest_num > 1) {
+                document.getElementById("Prev_button").style.display = "block";
+                document.getElementById("email_temp").src = "";
+                document.getElementById("Context").innerHTML = "Context for Question " + quest_num.toString() + " Email";
+            }
+            else {
+                document.getElementById("Prev_button").style.display = "none";
+                document.getElementById("email_temp").src = "email_template.html";
+                document.getElementById("Context").innerHTML = "You are a Verizon customer who has to pay your cellular service bill every month.";
+            }
+            document.getElementById("QuestionNumber").innerHTML = quest_num.toString();
+        }
+    </script>
+</body>
+</html>
