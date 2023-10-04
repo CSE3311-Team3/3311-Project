@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+    <meta charset="UTF-8">
+    <title>Phish Detective</title>
+    <link rel="stylesheet" href="email_template2.css">
+
+    <!-- This code is responsible for linking to Google API to create the paperclip icon in the attachment details -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+
+<style>
+/* Reset default styles */
+body, p {
+    margin: 0;
+    padding: 0;
+}
+</style>
+
+<body>
+    <!-- Create the email container -->
+    <div class="email-container">
+        <div class="header">
+            <p>Amazon: Fraudulent activity Detected!</p>
+        </div>
+        <!-- Includes the from, subject, and attachment details -->
+        <div class = "email-details">
+            <!-- Code to generate the from line with appropriate spacing -->
+            <p style="display: inline;"><b>From:&ensp;&emsp;</b>
+                <p style="display: inline;" class="from-details">Amazon Accounts services</p>
+
+             <!-- Code to generate the subject line with appropriate spacing -->
+            <p><b>Subject:&ensp;</b>Amazon: Fraudulent activity Detected!</p>
+
+            <br>
+        </div>
+        <!-- Actual content of the email -->
+        <div class="content">
+            <p>Dear Customer,</p>
+            <br>
+            <p>We are contacting you to remind you that on 20th June 2019 we identified some unsual activity
+              coming from foreign IP address 265.456.23.1 (located in Africa).
+            </p>
+            <br>
+            <p>In order to prevent any fradulent activity from occuring we are requiring to open investigation
+              into this matter. According to the site policy you will have to confirm that you are the real owner 
+              of amazon account by completing the following form or else your account will be marked as fraudulent,
+               and we will have to terminate the account.
+            </p>
+            <br>
+            <div class="acc-security-link">
+                https://www.amazon.com/userdata/accounts/security/fraud-prevention
+            </div>
+            <br>
+            <p>
+                Copyright 2019 Amazon.com,Inc All rights reserved.
+            </p>
+            <br>    
+            <p>We hope you found this message to be useful. However if you'd rather not receive future e-mails or This
+              from Amazon, please visit the opot-out link below
+            </p>
+            <div class="opt-out-link">
+                https://www.amazon.com/gp/gss/o/4337ddfa.dfad5
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,16 @@
+.opt-out-link:hover::after {
+  content: "https://bit.ly/df2@ffa";
+  background-color: yellow;
+  border: groove;
+  font-weight: bold;
+  color: rgb(3, 3, 3);
+  margin-left: 10px;
+}
+.acc-security-link:hover::after {
+  content: "https://bit.ly/dfa@f@33";
+  background-color: yellow;
+  border: groove;
+  font-weight: bold;
+  color: rgb(3, 3, 3);
+  margin-left: 10px;
+}
