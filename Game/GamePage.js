@@ -3,6 +3,7 @@ import { Email } from "./Email.js";
 var testEmail;
 const answers = new Map();
 var QuestionNumber;
+var CurrentScore;
 
 const TestQuestions = []; // This will contain all the test questions within a single play session
 
@@ -12,10 +13,12 @@ window.addEventListener('load', () => {
     document.getElementById("Next_button").addEventListener("click", nextClick);
     document.getElementById("Prev_button").addEventListener("click", prevClick);
     QuestionNumber = 1;
+    CurrentScore = 0;
     document.getElementById("QuestionNumber").innerHTML = QuestionNumber;
     createTestQuestions(TestQuestions);
     console.log(TestQuestions);
     document.getElementById("email_temp").setAttribute("src", TestQuestions[QuestionNumber - 1].getSource);
+    document.getElementById("high_score").innerHTML = CurrentScore;
 }) 
 
 function createTestQuestions(TestQuestions){
@@ -26,40 +29,47 @@ function createTestQuestions(TestQuestions){
 
 function phishClick() {
     document.getElementById("ChoiceSelected").innerHTML = "Phish Button was selected.";
-    setting_answer('p');
+    setting_answer(false);
 }
 
 function realClick() {
     document.getElementById("ChoiceSelected").innerHTML = "Real Button was selected.";
-    setting_answer('r');
+    setting_answer(true);
 }
 
 function setting_answer(choice) {
-    var quest_num = parseInt(document.getElementById("QuestionNumber").innerHTML);
-    answers.set(quest_num,choice);
+    answers.set(QuestionNumber,choice);
 }
 
 function nextClick() {
-    updateQuestion("next");
     tracking_answer();
+    updateQuestion("next");
 }
 
 function prevClick() {
-    updateQuestion("prev");
-    tracking_answer();          
+    tracking_answer();
+    updateQuestion("prev");          
 }
 
 function tracking_answer() {
     var quest_num = parseInt(document.getElementById("QuestionNumber").innerHTML);
     var answer = answers.get(quest_num);
-    if(answer == 'p') {
+    if(answer == false) {
         document.getElementById("ChoiceSelected").innerHTML = "Phish Button was selected.";
     }
-    else if(answer == 'r') {
+    else if(answer == true) {
         document.getElementById("ChoiceSelected").innerHTML = "Real Button was selected.";
     }
     else {
         document.getElementById("ChoiceSelected").innerHTML = "";
+    }
+    checkAnswer();
+}
+
+function checkAnswer() {
+    if(TestQuestions[QuestionNumber - 1].getPhish == answers.get(QuestionNumber)){
+        CurrentScore += 1;
+        document.getElementById("high_score").innerHTML = CurrentScore;
     }
 }
 

@@ -1,0 +1,11 @@
+.from-details {
+  cursor: pointer;
+}
+.from-details:hover::after {
+  content: "no-reply@accounts.google.com";
+  background-color: yellow;
+  border: groove;
+  font-weight: bold;
+  color: rgb(3, 3, 3);
+  margin-left: 10px;
+}

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+    <meta charset="UTF-8">
+    <title>Phish Detective</title>
+    <link rel="stylesheet" href="email_template.css">
+
+    <!-- This code is responsible for linking to Google API to create the paperclip icon in the attachment details -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+
+<style>
+/* Reset default styles */
+body, p {
+    margin: 0;
+    padding: 0;
+}
+</style>
+
+<body>
+    <!-- Create the email container -->
+    <div class="email-container">
+        <div class="header">
+            <p>Security alert</p>
+        </div>
+        <!-- Includes the from, subject, and attachment details -->
+        <div class = "email-details">
+            <!-- Code to generate the from line with appropriate spacing -->
+            <p style="display: inline;"><b>From:&ensp;&emsp;</b>
+                <p style="display: inline;" class="from-details">Google</p>
+
+             <!-- Code to generate the subject line with appropriate spacing -->
+            <p><b>Subject:&ensp;</b>Security alert</p>
+            <br>
+        </div>
+        <!-- Actual content of the email -->
+        <div class="content">
+            <p>A new sign-in on Windows</p>
+            <p class="user_email">some email will need to randomly generate</p>
+            <br>
+            <p>We noticed a new sign-in to your Google Account on a Windows device. If this was you, 
+              you don't need to do anything. If not, we'll help you secure your account.
+            </p>
+            <br>
+            <div class="check_activity_link"> Check Activity</div>
+            <br>
+            <div>You can also see security activity at 
+              <div class="sec_act_link">https://myaccount.google.com/notifications</div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
