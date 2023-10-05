@@ -5,7 +5,8 @@ const answers = new Map();
 var QuestionNumber;
 var CurrentScore;
 
-const TestQuestions = []; // This will contain all the test questions within a single play session
+// This will contain all the test questions within a single play session
+const TestQuestions = []; 
 
 window.addEventListener('load', () => {
     document.getElementById("Phish_button").addEventListener("click", phishClick);
@@ -19,7 +20,11 @@ window.addEventListener('load', () => {
     console.log(TestQuestions);
     document.getElementById("email_temp").setAttribute("src", TestQuestions[QuestionNumber - 1].getSource);
     document.getElementById("high_score").innerHTML = CurrentScore;
+    
+    change_iframeContent();
 }) 
+
+
 
 function createTestQuestions(TestQuestions){
     for(let i = 0; i < 10; i++){
@@ -100,6 +105,6 @@ function updateQuestion(dir) {
         document.getElementById("Prev_button").style.display = "none";
     }
     
-    //document.getElementById("Context").innerHTML = "Context for Question " + quest_num.toString() + " Email";
     document.getElementById("email_temp").setAttribute("src", TestQuestions[QuestionNumber - 1].getSource);
+    change_iframeContent();
 }
