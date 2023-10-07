@@ -8,7 +8,6 @@ export class Email {
         this.phish = this.isReal();
         this.clues = [];
         this.source = this.determineSource();
-        
     }
     
     get getSource() {
@@ -44,13 +43,21 @@ export class Email {
             }
         }
         else {
-            var quest_num = Math.floor(Math.random() * 1);
+            var quest_num = Math.floor(Math.random() * 2) + 1; 
+            // the "* #" portion will change as more real_emtail templates are added 
             switch(quest_num){
-                case 0:
-                    const Names = ["Woohoo", "Noodle", "InSee"];
+                case 1:
+                    var Names = ["Woohoo", "Noodle", "InSee"];
                     var num = Math.floor(Math.random() * 3);
                     this.clues.push(Names[num]);
-                    return "./Real_Emails/email_template.html";
+                    return "./Real_Emails/template" + quest_num + "/template" + quest_num +".html";
+                case 2: 
+                    var Names = ["Frozen", "Cheddar", "Embargo", "Safe"];
+                    var num = Math.floor(Math.random() * 4);
+                    this.clues.push(Names[num]);
+                    return "./Real_Emails/template" + quest_num + "/template" + quest_num +".html";
+                default:
+                    return "default";
             }
         } 
     }

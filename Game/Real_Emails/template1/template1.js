@@ -5,9 +5,6 @@ window.addEventListener('load', () => {
 });
   
 window.addEventListener('message', (event) => {
-    console.log("Message received!");
-    console.log(event.origin);
-    console.log(event.data);
     if(event.origin !== "http://127.0.0.1:5500"){ // Might need to find a way to specify this
       return;
     }

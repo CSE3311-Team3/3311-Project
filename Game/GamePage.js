@@ -22,7 +22,6 @@ window.addEventListener('load', () => {
     document.getElementById("high_score").innerHTML = CurrentScore;
 
     document.querySelector('iframe').onload = function(){
-        console.log("iframe loaded");
         sendQuestionToIframe();
     };
 })  
@@ -113,7 +112,6 @@ function updateQuestion(dir) {
 }
 
 function sendQuestionToIframe(){
-    console.log(origin);
     const iframe = document.querySelector("iframe");
     var cluez = TestQuestions[QuestionNumber - 1].getClues
     iframe.contentWindow.postMessage(cluez, origin);
