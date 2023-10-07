@@ -11,6 +11,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <script type="module" src="email_template.js"></script>
+
 </head>
 
 <style>
@@ -30,27 +31,29 @@ body, p {
         <!-- Includes the from, subject, and attachment details -->
         <div class = "email-details">
             <!-- Code to generate the from line with appropriate spacing -->
-            <p style="display: inline;"><b>From:&ensp;&emsp;</b>
-                <p style="display: inline;" class="from-details">Google</p>
-
+            <div><b>From:&ensp;&emsp;</b>
+                <div id="clue1" style="display: inline;" title="">
+                </div>
+            </div>
              <!-- Code to generate the subject line with appropriate spacing -->
-            <p><b>Subject:&ensp;</b>Security alert</p>
+            <div><b>Subject:&ensp;</b>Security alert</div>
             <br>
         </div>
         <!-- Actual content of the email -->
         <div class="content">
-            <p>A new sign-in on Windows</p>
-            <p class="user_email">some email will need to randomly generate</p>
+            <div>A new sign-in on Windows</div>
+            <div id="clue4"></div>
             <br>
-            <p>We noticed a new sign-in to your Google Account on a Windows device. If this was you, 
+            <span>We noticed a new sign-in to your <span id="clue2"></span> Account on a Windows device. If this was you, 
               you don't need to do anything. If not, we'll help you secure your account.
-            </p>
+            </span>
             <br>
-            <div class="check_activity_link" id="check_activity_link" hoverText="check_activity_link">Check Activity</div>
             <br>
-            <div>You can also see security activity at 
-              <div class="sec_act_link">https://myaccount.google.com/notifications</div>
-            </div>
+            <div id="clue5" title="">Check Activity</div>
+            <br>
+            <span>You can also see security activity at
+              <span id="clue3" style="display: inline;" title=""></span>
+            </span>
         </div>
     </div>
 </body>

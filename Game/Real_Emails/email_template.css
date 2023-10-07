@@ -2,21 +2,6 @@
   cursor: pointer;
 }
 .from-details:hover::after {
-  content: "no-reply@accounts.google.com";
-  background-color: yellow;
-  border: groove;
-  font-weight: bold;
-  color: rgb(3, 3, 3);
-  margin-left: 10px;
-}
-
-.check_activity_link {
-  display: inline-block;
-  border-bottom: 1px dotted black;
-  color: blue;
-}
-
-.check_activity_link:hover::after {
   content: attr(hoverText);
   background-color: yellow;
   border: groove;

@@ -20,9 +20,12 @@ window.addEventListener('load', () => {
     console.log(TestQuestions);
     document.getElementById("email_temp").setAttribute("src", TestQuestions[QuestionNumber - 1].getSource);
     document.getElementById("high_score").innerHTML = CurrentScore;
-    
-    change_iframeContent();
-}) 
+
+    document.querySelector('iframe').onload = function(){
+        console.log("iframe loaded");
+        sendQuestionToIframe();
+    };
+})  
 
 
 
@@ -91,7 +94,7 @@ function updateQuestion(dir) {
             }
         }        
     }
-    if(dir === "prev") {
+    else if(dir === "prev") {
         QuestionNumber -= 1;
         document.getElementById("QuestionNumber").innerHTML = QuestionNumber;
         if(QuestionNumber < 10) {
@@ -106,5 +109,13 @@ function updateQuestion(dir) {
     }
     
     document.getElementById("email_temp").setAttribute("src", TestQuestions[QuestionNumber - 1].getSource);
-    change_iframeContent();
+    sendQuestionToIframe();
+}
+
+function sendQuestionToIframe(){
+    console.log(origin);
+    const iframe = document.querySelector("iframe");
+    var cluez = TestQuestions[QuestionNumber - 1].getClues
+    iframe.contentWindow.postMessage(cluez, origin);
+    
 }

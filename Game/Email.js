@@ -6,7 +6,9 @@ export class Email {
         this.sender = sender;
         this.date = new Date();
         this.phish = this.isReal();
+        this.clues = [];
         this.source = this.determineSource();
+        
     }
     
     get getSource() {
@@ -17,6 +19,9 @@ export class Email {
         return this.phish;
     }
 
+    get getClues() {
+        return this.clues;
+    }
     isReal(){
         // true == Email is real
         // false == Email is a Phish
@@ -42,6 +47,9 @@ export class Email {
             var quest_num = Math.floor(Math.random() * 1);
             switch(quest_num){
                 case 0:
+                    const Names = ["Woohoo", "Noodle", "InSee"];
+                    var num = Math.floor(Math.random() * 3);
+                    this.clues.push(Names[num]);
                     return "./Real_Emails/email_template.html";
             }
         } 
