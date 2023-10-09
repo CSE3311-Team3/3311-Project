@@ -13,7 +13,6 @@ window.addEventListener('message', (event) => {
     var clue2 = document.getElementById("clue2");
     var clue3 = document.getElementById("clue3");
     var clue4 = document.getElementById("clue4");
-    // var clue5 = document.getElementById("clue5");
 
     clue1.innerHTML = clues[0];
     clue1.setAttribute("title", "alerts@notify." + clues[0] +".com");
