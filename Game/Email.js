@@ -40,24 +40,37 @@ export class Email {
                     return "./Phish_Emails/email_template.html";
                 case 1:
                     return "./Phish_Emails/email_template2.html";
+                default:
+                    return "default Phish";
             }
         }
         else {
-            var quest_num = Math.floor(Math.random() * 2) + 1; 
+            var quest_num = Math.floor(Math.random() * 3) + 1; 
             // the "* #" portion will change as more real_emtail templates are added 
             switch(quest_num){
                 case 1:
                     var Names = ["Woohoo", "Noodle", "InSee"];
-                    var num = Math.floor(Math.random() * 3);
+                    var num = Math.floor(Math.random() * Names.length);
                     this.clues.push(Names[num]);
                     return "./Real_Emails/template" + quest_num + "/template" + quest_num +".html";
                 case 2: 
                     var Names = ["Frozen", "Cheddar", "Embargo", "Safe"];
-                    var num = Math.floor(Math.random() * 4);
+                    var num = Math.floor(Math.random() * Names.length);
                     this.clues.push(Names[num]);
                     return "./Real_Emails/template" + quest_num + "/template" + quest_num +".html";
+                case 3:
+                    var UserNames = ["Michael", "Leo", "Jacki", "David", "Penny"];
+                    var serviceNames = ["BitTub", "DocuShare","PageWrite", "SnapEdit", "FileService"];
+                    var documentNames = ["TaxReturns", "ProjectCharter","CoporateBudget", "Presentation"];
+                    var num = Math.floor(Math.random() * UserNames.length);
+                    this.clues.push(UserNames[num]);
+                    num = Math.floor(Math.random() * serviceNames.length);
+                    this.clues.push(serviceNames[num]);
+                    num = Math.floor(Math.random() * documentNames.length);
+                    this.clues.push(documentNames[num]);
+                    return "./Real_Emails/template" + quest_num + "/template" + quest_num +".html";
                 default:
-                    return "default";
+                    return "default REal";
             }
         } 
     }
