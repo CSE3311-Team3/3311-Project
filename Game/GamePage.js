@@ -2,80 +2,118 @@ import { Email } from "./Email.js";
 
 var testEmail;
 const answers = new Map();
+var QuestionNumber;
+var CurrentScore;
 
+// This will contain all the test questions within a single play session
+const TestQuestions = []; 
 
 window.addEventListener('load', () => {
     document.getElementById("Phish_button").addEventListener("click", phishClick);
     document.getElementById("Real_button").addEventListener("click", realClick);
     document.getElementById("Next_button").addEventListener("click", nextClick);
     document.getElementById("Prev_button").addEventListener("click", prevClick);
-    testEmail = new Email(playerName, "Any Sender");
-    console.log(testEmail);
-}) 
+    QuestionNumber = 1;
+    CurrentScore = 0;
+    document.getElementById("QuestionNumber").innerHTML = QuestionNumber;
+    createTestQuestions(TestQuestions);
+    console.log(TestQuestions);
+    document.getElementById("email_temp").setAttribute("src", TestQuestions[QuestionNumber - 1].getSource);
+    document.getElementById("high_score").innerHTML = CurrentScore;
+
+    document.querySelector('iframe').onload = function(){
+        sendQuestionToIframe();
+    };
+})  
+
+
+
+function createTestQuestions(TestQuestions){
+    for(let i = 0; i < 10; i++){
+        TestQuestions.push(new Email("Question" + i, "Sender" + i, i ));
+    }
+}
 
 function phishClick() {
     document.getElementById("ChoiceSelected").innerHTML = "Phish Button was selected.";
-    setting_answer('p');
+    setting_answer(false);
 }
 
 function realClick() {
     document.getElementById("ChoiceSelected").innerHTML = "Real Button was selected.";
-    setting_answer('r');
+    setting_answer(true);
 }
 
 function setting_answer(choice) {
-    var quest_num = parseInt(document.getElementById("QuestionNumber").innerHTML);
-    answers.set(quest_num,choice);
+    answers.set(QuestionNumber,choice);
 }
 
 function nextClick() {
-    updateQuestion("next");
     tracking_answer();
+    updateQuestion("next");
 }
 
 function prevClick() {
-    updateQuestion("prev");
-    tracking_answer();          
+    tracking_answer();
+    updateQuestion("prev");          
 }
 
 function tracking_answer() {
     var quest_num = parseInt(document.getElementById("QuestionNumber").innerHTML);
     var answer = answers.get(quest_num);
-    if(answer == 'p') {
+    if(answer == false) {
         document.getElementById("ChoiceSelected").innerHTML = "Phish Button was selected.";
     }
-    else if(answer == 'r') {
+    else if(answer == true) {
         document.getElementById("ChoiceSelected").innerHTML = "Real Button was selected.";
     }
     else {
         document.getElementById("ChoiceSelected").innerHTML = "";
     }
+    checkAnswer();
+}
+
+function checkAnswer() {
+    if(TestQuestions[QuestionNumber - 1].getPhish == answers.get(QuestionNumber)){
+        CurrentScore += 1;
+        document.getElementById("high_score").innerHTML = CurrentScore;
+    }
 }
 
 function updateQuestion(dir) {
-    var quest_num = parseInt(document.getElementById("QuestionNumber").innerHTML);
     if(dir === "next") {
-        quest_num = quest_num + 1;
-        if(quest_num == 10) {
-            document.getElementById("Next_button").innerHTML = "FINISH";
-        }
-        if(quest_num > 10) {
+        if(QuestionNumber == 10) {
             window.location.href = "../EndScreen/EndScreen.html";
         }
+        else {
+            QuestionNumber += 1;
+            document.getElementById("QuestionNumber").innerHTML = QuestionNumber;
+            if(QuestionNumber == 10) {
+                document.getElementById("Next_button").innerHTML = "FINISH";
+            }
+        }        
     }
-    if(dir === "prev") {
-        quest_num = quest_num - 1;
-        if(quest_num < 10) {
+    else if(dir === "prev") {
+        QuestionNumber -= 1;
+        document.getElementById("QuestionNumber").innerHTML = QuestionNumber;
+        if(QuestionNumber < 10) {
             document.getElementById("Next_button").innerHTML = "NEXT";
         }
     }
-    if(quest_num > 1) {
+    if(QuestionNumber > 1) {
         document.getElementById("Prev_button").style.display = "block";
     }
     else {
         document.getElementById("Prev_button").style.display = "none";
     }
-    document.getElementById("QuestionNumber").innerHTML = quest_num.toString();
-    document.getElementById("Context").innerHTML = "Context for Question " + quest_num.toString() + " Email";
-    document.getElementById("Email").innerHTML = "Question " + quest_num.toString() + " Email Sample";
+    
+    document.getElementById("email_temp").setAttribute("src", TestQuestions[QuestionNumber - 1].getSource);
+    sendQuestionToIframe();
+}
+
+function sendQuestionToIframe(){
+    const iframe = document.querySelector("iframe");
+    var cluez = TestQuestions[QuestionNumber - 1].getClues
+    iframe.contentWindow.postMessage(cluez, origin);
+    
 }

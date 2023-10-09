@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+    <meta charset="UTF-8">
+    <title>Phish Detective</title>
+    <link rel="stylesheet" href="template3.html">
+
+    <!-- This code is responsible for linking to Google API to create the paperclip icon in the attachment details -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script type="module" src="template3.js"></script>
+
+</head>
+
+<style>
+/* Reset default styles */
+body, p {
+    margin: 0;
+    padding: 0;
+}
+</style>
+
+<body>
+    <!-- Create the email container -->
+    <div class="email-container">
+      <div class="header">
+        <p>Cloud Document - Invitation to Edit</p>
+      </div>
+      <!-- Includes the from, subject, and attachment details -->
+      <div class = "email-details">
+          <!-- Code to generate the from line with appropriate spacing -->
+          <div><b>From:&ensp;&emsp;</b>
+              <div id="clue1" style="display: inline;" title="">
+              </div>
+          </div>
+          <!-- Code to generate the subject line with appropriate spacing -->
+          <div><b>Subject:&ensp;</b>Cloud Document - Invitation to Edit</div>
+          <br>
+          
+
+          <span>
+            <span id="clue2"></span>has invited you to collaborate on the document:
+            <span id="clue3"></span>.
+          </span>
+          <br>
+          <br>
+          <span> You can <span id="clue4">accept or decline</span> this invitation.You can also
+            head over to <span id="clue5"></span> to check out the invitation details or visit
+            <span id="clue6"></span> to learn more about them.
+          </span>
+          <br>
+          <br>
+          <span>This invitation will expire in 3 days</span>
+          <br>
+          <br>
+          <div>View Invitation</div>
+          <br>
+          <br>
+          <span>Note: this invitation was intended for <span id="clue7"></span>. If you were not
+            expecting this invitation, you ignore this email. If <span id="clue8"></span> has been sending
+            too many emails, you can <span id="clue9">block them</span> or <span id="clue10">report abuse</span>.
+          </span>
+
+</body>
+
+</html>
