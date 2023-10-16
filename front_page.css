@@ -3,7 +3,7 @@ body
 {
     background-image: url('background.jpg');
 }
-
+/*set the size color and alignment of the texts on screen*/
 .page_title 
 {
     font-size: 84px;
@@ -16,7 +16,7 @@ body
     font-size: 24px;
     color: white;
 }
-
+/*add buttons arrange to prefered height, width, alignment */
 .button
 {
     background-color: #000080;
