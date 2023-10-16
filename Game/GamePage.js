@@ -27,7 +27,6 @@ window.addEventListener('load', () => {
 })  
 
 
-
 function createTestQuestions(TestQuestions){
     for(let i = 0; i < 10; i++){
         TestQuestions.push(new Email("Question" + i, "Sender" + i, i ));
