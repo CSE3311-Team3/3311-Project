@@ -27,18 +27,20 @@ window.addEventListener('load', () => {
 })  
 
 
-
+// Creates the test questions
 function createTestQuestions(TestQuestions){
     for(let i = 0; i < 10; i++){
         TestQuestions.push(new Email("Question" + i, "Sender" + i, i ));
     }
 }
 
+// Registers the 'Phish' button was clicked
 function phishClick() {
     document.getElementById("ChoiceSelected").innerHTML = "Phish Button was selected.";
     setting_answer(false);
 }
 
+// Registers the 'Real' button was clicked
 function realClick() {
     document.getElementById("ChoiceSelected").innerHTML = "Real Button was selected.";
     setting_answer(true);
@@ -48,11 +50,13 @@ function setting_answer(choice) {
     answers.set(QuestionNumber,choice);
 }
 
+// Registers the 'Next' question button was clicked
 function nextClick() {
     tracking_answer();
     updateQuestion("next");
 }
 
+// Registers the 'Prev' question button was clicked
 function prevClick() {
     tracking_answer();
     updateQuestion("prev");          
@@ -73,6 +77,7 @@ function tracking_answer() {
     checkAnswer();
 }
 
+// Updates the display question on the GamePage
 function checkAnswer() {
     if(TestQuestions[QuestionNumber - 1].getPhish == answers.get(QuestionNumber)){
         CurrentScore += 1;
@@ -111,6 +116,7 @@ function updateQuestion(dir) {
     sendQuestionToIframe();
 }
 
+// Sends clues for the displayed question to the Iframe
 function sendQuestionToIframe(){
     const iframe = document.querySelector("iframe");
     var cluez = TestQuestions[QuestionNumber - 1].getClues
