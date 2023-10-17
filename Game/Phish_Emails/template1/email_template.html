@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+    <meta charset="UTF-8">
+    <title>Phish Detective</title>
+    <link rel="stylesheet" href="email_template.css">
+
+    <!-- This code is responsible for linking to Google API to create the paperclip icon in the attachment details -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+
+<style>
+/* Reset default styles */
+body, p {
+    margin: 0;
+    padding: 0;
+}
+</style>
+
+<body>
+    <!-- Create the email container -->
+    <div class="email-container">
+        <div class="header">
+            <p>Verizon: October Bill Past Due!</p>
+        </div>
+        <!-- Includes the from, subject, and attachment details -->
+        <div class = "email-details">
+            <!-- Code to generate the from line with appropriate spacing -->
+            <p style="display: inline;"><b>From:&ensp;&emsp;</b>
+                <p style="display: inline;" class="from-details">William Foster</p>
+
+             <!-- Code to generate the subject line with appropriate spacing -->
+            <p><b>Subject:&ensp;</b>Verizon: October Bill Past Due!</p>
+
+            <br>
+
+            <div class="attachment-details">
+
+                <!-- Generates the attachment details and creates a paperclip icon using Google API -->
+                <span class="glyphicon glyphicon-paperclip"></span> October_Bill.zip
+    
+            </div>
+        </div>
+        <!-- Actual content of the email -->
+        <div class="content">
+            <p>Dear Verizon Customer,</p>
+            <br>
+            <p>I hope this email finds you well. I am writing to remind you about the outstanding payment for your October bill. 
+                According to our records, your October invoice remains unpaid, and the due date has passed.</p>
+            <br>
+            <p>If you do not pay your bill as soon as possible, you will lose service effective immediately. 
+                Please see the attached zip file for more information regarding your bill.</p>
+            <br>
+            <p>Best,<br>William Foster<br>Verizon Customer Service</p>
+        </div>
+    </div>
+</body>
+
+</html>
+

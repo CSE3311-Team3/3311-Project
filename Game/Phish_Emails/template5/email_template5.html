@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+    <meta charset="UTF-8">
+    <title>Phish Detective</title>
+    <link rel="stylesheet" href="email_template5.css">
+
+    <!-- This code is responsible for linking to Google API to create the paperclip icon in the attachment details -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+
+<style>
+/* Reset default styles */
+body, p {
+    margin: 0;
+    padding: 0;
+}
+</style>
+
+<body>
+    <!-- Create the email container -->
+    <div class="email-container">
+        <div class="header">
+            <p>Unusual Activity Alert</p>
+        </div>
+        <!-- Includes the from, subject, and attachment details -->
+        <div class = "email-details">
+            <!-- Code to generate the from line with appropriate spacing -->
+            <p style="display: inline;"><b>From:&ensp;&emsp;</b>
+                <p style="display: inline;" class="from-details">JPMorgan CHASE</p>
+
+             <!-- Code to generate the subject line with appropriate spacing -->
+            <p><b>Subject:&ensp;</b>Unusual Activity Alert</p>
+            <br>
+        </div>
+        <!-- Actual content of the email -->
+        <div class="content">
+            <p>Dear Valued CHASE customer:</p>
+            <br>
+            <p>We have detected some irregular activity on your account. To verify your identity, 
+                please go to our <p style="display: inline;" class="link-details">Customer Service Portal</p>
+                and fill out a quick form. Please have your account information ready. 
+                Your account security is very important to us, so please complete this process as soon as you are able to.</p>
+            <br>
+            <p>Thank You, <br><br> Customer Service Center <br><br> JPMorgan Chase & Co</p>
+        </div>
+    </div>
+</body>
+
+</html>

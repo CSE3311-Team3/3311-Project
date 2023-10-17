@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+    <meta charset="UTF-8">
+    <title>Phish Detective</title>
+    <link rel="stylesheet" href="email_template5.css">
+
+    <!-- This code is responsible for linking to Google API to create the paperclip icon in the attachment details -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+
+<style>
+/* Reset default styles */
+body, p {
+    margin: 0;
+    padding: 0;
+}
+</style>
+
+<body>
+    <!-- Create the email container -->
+    <div class="email-container">
+        <div class="header">
+            <p>UTA Research Assistants Needed!</p>
+        </div>
+        <!-- Includes the from, subject, and attachment details -->
+        <div class = "email-details">
+            <!-- Code to generate the from line with appropriate spacing -->
+            <p style="display: inline;"><b>From:&ensp;&emsp;</b>
+                <p style="display: inline;" class="from-details">College of Engineering</p>
+
+             <!-- Code to generate the subject line with appropriate spacing -->
+            <p><b>Subject:&ensp;</b>UTA Research Assistants Needed!</p>
+            <br>
+        </div>
+        <!-- Actual content of the email -->
+        <div class="content">
+            <p>Hey!</p>
+            <br>
+            <p>Applications for student research positions at the UTA Research Institute for Fall 2024 are now open!
+                <br><br>
+                Between research assistant and volunteer opportunities, students have a multitude of ways to get involved at 
+                UTARI. In our programs, students are able to work with experienced research scientists, 
+                using state-of-the-art technology to develop the products of tomorrow.
+                <br><br>
+                TO apply, and for a list of opportunities go to:
+                <br><br>
+                <p><p style="display: inline;" class="link-details">uta.edu/careers/research-assistants/positions</p></p>
+                </p>
+        </div>
+    </div>
+</body>
+
+</html>
