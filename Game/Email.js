@@ -47,7 +47,7 @@ export class Email {
                 case 4:
                     return "./Phish_Emails/template5/email_template5.html";
                 case 5:
-                    return "./Phish_Emails/email_template6.html";
+                    return "./Phish_Emails/template6/email_template6.html";
                 default:
                     return "default Phish";
             }
