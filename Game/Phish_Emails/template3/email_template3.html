@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+    <meta charset="UTF-8">
+    <title>Phish Detective</title>
+    <link rel="stylesheet" href="email_template3.css">
+
+    <!-- This code is responsible for linking to Google API to create the paperclip icon in the attachment details -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+
+<style>
+/* Reset default styles */
+body, p {
+    margin: 0;
+    padding: 0;
+}
+</style>
+
+<body>
+    <!-- Create the email container -->
+    <div class="email-container">
+        <div class="header">
+            <p>Thank You!</p>
+        </div>
+        <!-- Includes the from, subject, and attachment details -->
+        <div class = "email-details">
+            <!-- Code to generate the from line with appropriate spacing -->
+            <p style="display: inline;"><b>From:&ensp;&emsp;</b>
+                <p style="display: inline;" class="from-details">PayPal</p>
+
+             <!-- Code to generate the subject line with appropriate spacing -->
+            <p><b>Subject:&ensp;</b>Thank You!</p>
+
+            <br>
+        </div>
+        <!-- Actual content of the email -->
+        <div class="content">
+            <p>Hello</p>
+            <br>
+            <p>We are glad to receive your order. Your order is already being processed. Thank you for your purchase!
+            </p>
+            <br>
+            <p>Order Details:
+                <br>---------------------------------------------------------------------------------------
+                <br>Subtotal: $499.00<br>Payment: $499.00
+                <br>---------------------------------------------------------------------------------------
+                <br>If you have any issues with this transactions, please reach out to our 24 hour hotline:
+                <br>+1(877)206-7865<br>
+                <br>You have 24 hours from the date of this transaction to open a dispute.<br>
+                <br>Regards,
+                <br>PayPal
+            </p>
+   
+        </div>
+    </div>
+</body>
+
+</html>

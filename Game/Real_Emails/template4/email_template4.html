@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+    <meta charset="UTF-8">
+    <title>Phish Detective</title>
+    <link rel="stylesheet" href="email_template4.css">
+
+    <!-- This code is responsible for linking to Google API to create the paperclip icon in the attachment details -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+
+<style>
+/* Reset default styles */
+body, p {
+    margin: 0;
+    padding: 0;
+}
+</style>
+
+<body>
+    <!-- Create the email container -->
+    <div class="email-container">
+        <div class="header">
+            <p>Send asap please!</p>
+        </div>
+        <!-- Includes the from, subject, and attachment details -->
+        <div class = "email-details">
+            <!-- Code to generate the from line with appropriate spacing -->
+            <p style="display: inline;"><b>From:&ensp;&emsp;</b>
+                <p style="display: inline;" class="from-details">Emily Johnson</p>
+
+             <!-- Code to generate the subject line with appropriate spacing -->
+            <p><b>Subject:&ensp;</b>Send asap please!</p>
+            <br>
+        </div>
+        <!-- Actual content of the email -->
+        <div class="content">
+            <p>Hey!</p>
+            <br>
+            <p>I'm not near my work computer right now, but could you pls send me the analysis report for Liam Smith? 
+                I need to verify some info before we present our project in a few days. Remember to encrypt it.</p>
+            <br>
+            <p>Thx!<br><br>Sent from my iPhone</p>
+        </div>
+    </div>
+</body>
+
+</html>

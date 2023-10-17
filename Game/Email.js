@@ -17,7 +17,7 @@ export class Email {
     get getPhish() {
         return this.phish;
     }
-
+    
     get getClues() {
         return this.clues;
     }
@@ -34,20 +34,26 @@ export class Email {
     
     determineSource(){
         if (this.phish == false){
-            var quest_num = Math.floor(Math.random() * 3);
+            var quest_num = Math.floor(Math.random() * 6);
             switch(quest_num){
                 case 0:
-                    return "./Phish_Emails/email_template.html";
+                    return "./Phish_Emails/template1/email_template.html";
                 case 1:
-                    return "./Phish_Emails/email_template2.html";
+                    return "./Phish_Emails/template2/email_template2.html";
                 case 2:
-                    return "./Phish_Emails/email_template3.html";
+                    return "./Phish_Emails/template3/email_template3.html";
+                case 3:
+                    return "./Phish_Emails/template4/email_template4.html";
+                case 4:
+                    return "./Phish_Emails/template5/email_template5.html";
+                case 5:
+                    return "./Phish_Emails/email_template6.html";
                 default:
                     return "default Phish";
             }
         }
         else {
-            var quest_num = Math.floor(Math.random() * 4) + 1; 
+            var quest_num = Math.floor(Math.random() * 7) + 1; 
             // the "* #" portion will change as more real_emtail templates are added 
             switch(quest_num){
                 case 1:
@@ -76,6 +82,12 @@ export class Email {
                     this.clues.push(documentNames[num]);
                     return "./Real_Emails/template" + quest_num + "/template" + quest_num +".html";
                 case 4:
+                    return "./Real_Emails/template4/email_template4.html"
+                case 5:
+                    return "./Real_Emails/template5/email_template5.html"
+                case 6:
+                    return "./Real_Emails/template6/email_template6.html"
+                case 7:
                     var company_names = ["Google","Yahoo","Microsoft","AOL"];
                     var email_names = ["gmail","yahoo","outlook","aol"];
                     var company_addresses = [
@@ -132,7 +144,7 @@ export class Email {
                     
                     return "./Real_Emails/template" + quest_num.toString() + "/template" + quest_num.toString() + ".html";
                 default:
-                    return "default REal";
+                    return "default Real";
             }
         } 
     }
