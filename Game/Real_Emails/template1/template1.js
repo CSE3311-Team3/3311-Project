@@ -9,12 +9,14 @@ window.addEventListener('message', (event) => {
       return;
     }
     clues = event.data;
+    // Retrieve clue containers in the HTML template
     var clue1 = document.getElementById("clue1");
     var clue2 = document.getElementById("clue2");
     var clue3 = document.getElementById("clue3");
     var clue4 = document.getElementById("clue4");
     var clue5 = document.getElementById("clue5");
 
+    //Inserting clues into clue containers
     clue1.innerHTML = clues[0];
     clue1.setAttribute("title", "no-reply@accounts." + clues[0] +".com")
     clue2.innerHTML = clues[0];

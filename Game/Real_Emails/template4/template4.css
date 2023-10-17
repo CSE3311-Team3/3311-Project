@@ -1,0 +1,175 @@
+.subject_info {
+    -webkit-font-smoothing: antialiased;
+    background-color: white;
+    width: 100%;
+    height: 5vh;
+    justify-content: left;
+    align-items: center;
+    display: flex;
+    font-family: "Google Sans",Helvetica,Arial,sans-serif;
+    font-weight: 400;
+    font-size: 1.5rem;
+    font-variant-ligatures: no-contextual;
+    color: #1f1f1f;
+    margin-left: auto;
+    margin-bottom: 7px;
+    padding-left: 10px;
+    padding-top: 8px;
+}
+.sender_info {
+    -webkit-font-smoothing: antialiased;
+    background-color: white;
+    width: 100%;
+    height: 3vh;
+    align-items: center;
+    display: flex;
+    color: #1f1f1f;
+    margin-left: auto;
+    line-height: 20px;
+    margin-bottom: 2px;
+    padding-left: 10px;
+    float: left;
+}
+#sender_name {
+    font-weight: 600;
+    font-size: .95rem;
+    font-family: "Google Sans",Helvetica,Arial,sans-serif;
+    font-variant-ligatures: no-contextual;
+    letter-spacing: normal;
+    padding-right: 3.5px;
+}
+.sender_email {
+    font-weight: 400;
+    font-size: .85rem;
+    font-family: "Google Sans",Helvetica,Arial,sans-serif;
+    font-variant-ligatures: no-contextual;
+    letter-spacing: normal;
+    margin-right: auto;
+}
+.date {
+    font-size: .8rem;
+    font-family: "Google Sans",Helvetica,Arial,sans-serif;
+    font-weight: 400;
+    float: right;
+    text-align: right;
+    justify-content: right;
+    padding-right: 25px;
+    color:#5f6368;
+}
+.receiver_info {
+    width: 45%;
+    height: 3vh;
+    font-family: "Google Sans",Helvetica,Arial,sans-serif;
+    font-weight: 400;
+    font-size: .85rem;
+    margin-top: 0px;
+    margin-bottom: 20px;
+    display: flex;
+    color: #5f6368;
+    padding-left: 10px;
+}
+.receiver_hover {
+    display: none;
+}
+.receiver:hover + .receiver_hover {
+    display: block;
+    font-weight: 500;
+    font-size: .8rem;
+    color: rgb(81, 7, 81);
+    margin-left: 10px;
+    border-radius: 5px;
+    border-color: transparent;
+    border-style: groove;
+    border-width: 3px;
+    background-color: #dadce0;
+}
+.body_area {
+    width: 70%;
+    height: 60vh;
+    border-width: 1px;
+    border-style: solid;
+    border-color: #dadce0;
+    border-radius: 8px;
+    align-items: center;
+    justify-content: center;
+    float: center;
+    text-align: center;
+    padding: 40px 20px;
+    margin: auto;
+}
+#company_pic {
+    width: 90px;
+    height: 36px;
+    padding-top: 0px;
+    padding-bottom: 11px;
+}
+.alert_title {
+    font-family: 'Google Sans',Helvetica,Arial,sans-serif;
+    color: rgba(0,0,0,0.87);
+    text-align: center;
+    font-size: 20px;
+    padding-bottom: 10px;
+}
+.receiver_email {
+    font-family: 'Google Sans',Roboto,RobotoDraft,Helvetica,Arial,sans-serif;
+    color: rgba(0,0,0,0.87);
+    font-size: 15px;
+    line-height: 20px;
+    padding-bottom: 14px;
+    border-bottom: solid #dadce0;
+    border-bottom-width: 1.3px;
+    margin-bottom: 15px;
+}
+.message {
+    font-family: Roboto-Regular,Helvetica,Arial,sans-serif;
+    font-size: 13.5px;
+    color: rgba(0,0,0,0.87);
+    line-height: 20px;
+    padding-bottom: 17px;
+}
+.check_activity {
+    font-family: 'Google Sans',Helvetica,Arial,sans-serif;
+    color: white;
+    font-size: 15px;
+    display: inline-block;
+    padding: 10px 24px;
+    background-color: #4184f3;
+    border-radius: 5px;
+    margin-top: 10px;
+}
+.addit_info {
+    padding-top: 20px;
+    font-size: 12px;
+    line-height: 16px;
+    color: #5f6368;
+    text-align: center;
+    font-family: 'Google Sans',Helvetica,Arial,sans-serif;
+}
+.account_link {
+    color:rgba(0,0,0,0.87);
+}
+.account_link:hover::after {
+    content: "go to your acount";
+    font-weight: 500;
+    font-size: .7rem;
+    color: rgb(81, 7, 81);
+    margin-left: 10px;
+    border-radius: 5px;
+    border-color: transparent;
+    border-style: groove;
+    border-width: 3px;
+    background-color: #dadce0;
+    position: absolute;
+}
+.salutation_info {
+    width: 70%;
+    line-height: 18px;
+    padding-top: 12px;
+    padding-bottom: 8px;
+    text-align: center;
+    justify-content: center;
+    color: rgba(0,0,0,0.54);
+    font-family: Helvetica,Arial,sans-serif;
+    font-size: 11.5px;
+    margin: auto;
+}
