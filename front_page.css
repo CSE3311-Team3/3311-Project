@@ -9,14 +9,14 @@ body
     font-size: 84px;
     text-align: center;
     color: black;
-    font-family: Arial, sans-serif;
+    font-family: 'Courier New', Courier, monospace;
 }
 
 .score
 {
     font-size: 24px;
     color: black;
-    font-family: Arial, sans-serif;
+    font-family: 'Courier New', Courier, monospace;
 }
 /*add buttons arrange to prefered height, width, alignment */
 .button
@@ -33,7 +33,7 @@ body
     cursor: pointer;
     text-align:center;
     font-size: 36px;
-    font-family: Arial, sans-serif;
+    font-family: 'Courier New', Courier, monospace;
     
 }
 .button2
@@ -50,6 +50,6 @@ body
     cursor: pointer;
     text-align:center;
     font-size: 36px;
-    font-family: Arial, sans-serif;
+    font-family: 'Courier New', Courier, monospace;
     
 }
