@@ -51,9 +51,13 @@ export class Email {
             // the "* #" portion will change as more real_emtail templates are added 
             switch(quest_num){
                 case 1:
+                    // Arrays of possible Names to insert
                     var Names = ["Woohoo", "Noodle", "InSee"];
+                    // Random Number to pick a name with
                     var num = Math.floor(Math.random() * Names.length);
+                    // Push picked name into clues array
                     this.clues.push(Names[num]);
+                    //Return filepath for template
                     return "./Real_Emails/template" + quest_num + "/template" + quest_num +".html";
                 case 2: 
                     var Names = ["Frozen", "Cheddar", "Embargo", "Safe"];
