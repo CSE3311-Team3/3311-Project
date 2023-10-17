@@ -1,28 +1,29 @@
-/* set a background image */
+/* set a background color */
 body
 {
-    background-image: url('background.jpg');
+    background-color: rgba(43, 168, 199, 0.223);
 }
 /*set the size color and alignment of the texts on screen*/
 .page_title 
 {
     font-size: 84px;
     text-align: center;
-    color: white;
+    color: black;
+    font-family: Arial, sans-serif;
 }
 
 .score
 {
     font-size: 24px;
-    color: white;
+    color: black;
+    font-family: Arial, sans-serif;
 }
 /*add buttons arrange to prefered height, width, alignment */
 .button
 {
-    background-color: #000080;
+    background-color: #165191;
     color: white;
     padding: 50px;
-    border-radius: 50px;
     width: 500px;
     height: 5px;
     position:absolute;
@@ -32,14 +33,14 @@ body
     cursor: pointer;
     text-align:center;
     font-size: 36px;
+    font-family: Arial, sans-serif;
     
 }
 .button2
 {
-    background-color: #000080;
+    background-color: #165191;
     color: white;
     padding: 50px;
-    border-radius: 50px;
     width: 500px;
     height: 5px;
     position:absolute;
@@ -49,5 +50,6 @@ body
     cursor: pointer;
     text-align:center;
     font-size: 36px;
+    font-family: Arial, sans-serif;
     
 }
