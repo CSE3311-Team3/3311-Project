@@ -20,6 +20,7 @@ window.addEventListener('load', () => {
     console.log(TestQuestions);
     document.getElementById("email_temp").setAttribute("src", TestQuestions[QuestionNumber - 1].getSource);
     document.getElementById("high_score").innerHTML = CurrentScore;
+    document.getElementById("Context").innerHTML = TestQuestions[QuestionNumber - 1].getContext;
 
     document.querySelector('iframe').onload = function(){
         sendQuestionToIframe();
@@ -114,6 +115,7 @@ function updateQuestion(dir) {
     }
     
     document.getElementById("email_temp").setAttribute("src", TestQuestions[QuestionNumber - 1].getSource);
+    document.getElementById("Context").innerHTML = TestQuestions[QuestionNumber - 1].getContext;
     sendQuestionToIframe();
 }
 
