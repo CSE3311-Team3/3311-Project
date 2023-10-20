@@ -28,12 +28,7 @@ body {
     background-color: #eee;
 }
 
-
 /*  Begin functionality regarding hover text - specifically for the email's sender (from) */
-/* The content aspect of this is hard-coded for now. We should investigate the best way to */
-/* abstract this and make it easier to "mass produce." IDEA: create a content variable to update per email */
-/* - Joe 09/25 */
-
 .from-details {
     cursor: pointer;
 }
@@ -46,8 +41,7 @@ body {
     margin-left: 10px;
 }
 
-/* Attachment details, same as the from-details where the hover text is hard-coded. Best to abstract */
-/* in a future iteration. */
+/* Attachment details */
 .attachment-details {
     display: inline-block;
     padding: 5px;

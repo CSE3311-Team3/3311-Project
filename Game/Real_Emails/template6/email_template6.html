@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+    <meta charset="UTF-8">
+    <title>Phish Detective</title>
+    <link rel="stylesheet" href="email_template6.css">
+
+    <!-- This code is responsible for linking to Google API to create the paperclip icon in the attachment details -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+
+<style>
+/* Reset default styles */
+body, p {
+    margin: 0;
+    padding: 0;
+}
+</style>
+
+<body>
+    <!-- Create the email container -->
+    <div class="email-container">
+        <div class="header">
+            <p>Meeting Request for Quarterly Review</p>
+        </div>
+        <!-- Includes the from, subject, and attachment details -->
+        <div class = "email-details">
+            <!-- Code to generate the from line with appropriate spacing -->
+            <p style="display: inline;"><b>From:&ensp;&emsp;</b>
+                <p style="display: inline;" class="from-details">Stella Baker</p>
+
+             <!-- Code to generate the subject line with appropriate spacing -->
+            <p><b>Subject:&ensp;</b>Meeting Request for Quarterly Review</p>
+            <br>
+        </div>
+        <!-- Actual content of the email -->
+        <div class="content">
+            <p>Hey!</p>
+            <br>
+            <p>Dear [Your Name],
+                <br><br>
+                I hope this message finds you well. We would like to schedule a meeting to discuss the quarterly performance 
+                and set the agenda for the upcoming quarter.
+                <br><br>
+                Your input and insights are valuable, and your presence at this meeting is important. 
+                Please RSVP today at the link below so that we can make the necessary arrangements. 
+                Thank you for your cooperation.
+                <br><br>
+                <p style="display: inline;" class="link-details">RSVP</p>
+                <br><br>
+                Stella Baker
+                <br>
+                Production Manager
+                <br>
+                Amazon.com, Inc
+                <br>
+                stella.baker@Amazon.com
+                </p>
+        </div>
+    </div>
+</body>
+
+</html>

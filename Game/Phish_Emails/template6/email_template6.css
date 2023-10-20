@@ -1,0 +1,162 @@
+.subject_info {
+    -webkit-font-smoothing: antialiased;
+    background-color: #d0c5d0;
+    width: 100%;
+    height: 6.5vh;
+    justify-content: left;
+    align-items: center;
+    display: flex;
+    font-family: "Google Sans",Helvetica,Arial,sans-serif;
+    font-weight: 600;
+    font-size: 1.375rem;
+    font-variant-ligatures: no-contextual;
+    color: #1f1f1f;
+    margin-left: auto;
+    margin-bottom: 12px;
+    padding-left: 10px;
+}
+.dollar_sign {
+    color:green;
+    font-size:1.75rem;
+    margin-right: 7px;
+    font-weight:bold;
+}
+.sender_info {
+    -webkit-font-smoothing: antialiased;
+    background-color: white;
+    width: 100%;
+    height: 6vh;
+    justify-content: left;
+    align-items: center;
+    display: flex;
+    font-family: "Google Sans",Helvetica,Arial,sans-serif;
+    font-weight: 600;
+    font-size: .95rem;
+    font-variant-ligatures: no-contextual;
+    letter-spacing: normal;
+    color: #1f1f1f;
+    margin-left: auto;
+    line-height: 18px;
+    padding-left: 12px;
+}
+.sender_email {
+    font-family: "Google Sans",Helvetica,Arial,sans-serif;
+    font-weight: 500;
+    font-size: .85rem;
+    margin-left: 4px;
+    margin-right: 4px;
+}
+.unsub_link {
+    font-family: "Google Sans",Helvetica,Arial,sans-serif;
+    font-weight: 500;
+    font-size: .8rem;
+    margin-left: 6px;
+    margin-right: 4px;
+}
+.receiver_info {
+    width: 55%;
+    height: 3vh;
+    font-family: "Google Sans",Helvetica,Arial,sans-serif;
+    font-weight: 400;
+    font-size: .88rem;
+    margin-bottom: 20px;
+    display: flex;
+    color: purple;
+    padding-left: 12px;
+}
+.receiver_info:hover::after {
+    content: "jasondoe@gmail.com";
+    font-weight: 500;
+    font-size: .8rem;
+    color: rgb(81, 7, 81);
+    margin-left: 10px;
+    border-radius: 5px;
+    border-color: transparent;
+    border-style: groove;
+    border-width: 3px;
+    background-color: #dadce0;
+}
+.body_area {
+    -webkit-font-smoothing: antialiased;
+    background-color: white;
+    width: 100%;
+    height: 67vh;
+    justify-content: left;
+    align-items: center;
+    font-variant-ligatures: no-contextual;
+    margin-left: auto;
+    margin-top: 20px;
+    margin-bottom: 0px;
+    padding-left: 12px;
+    padding-top: 10px;
+}
+.large_links {
+    font-family: Helvetica,Arial,sans-serif;
+    font-weight: bold;
+    font-size: 1.1rem;
+    color: blue;
+    position: relative;
+}
+.large_links .actual_link {
+    visibility: hidden;
+    width: auto;
+    font-weight: 600;
+    font-size: .8rem;
+    content: "https://puzz.biglist.com/go/1326/36333417505/4/17819/2";
+    padding: 5px 0;
+    text-align: center;
+    color: darkblue;
+    position: absolute;
+    z-index: 1;
+}
+.large_links:hover::after{
+    content: "https://puzz.biglist.com/go/1326/36333417505/4/17819/2";
+    font-weight: 600;
+    font-size: .8rem;
+    color: darkblue;
+    width: auto;
+    position: absolute;
+    z-index: 1;
+    border: solid;
+    background-color: rgb(227, 222, 222);
+}
+.small_links {
+    font-family: Helvetica,Arial,sans-serif;
+    font-weight: 500;
+    font-size: .8rem;
+    color: blue;
+    position: relative;
+}
+.small_links:hover::after {
+    content: "https://puzz.biglist.com/go/1326/36333417505/4/17819/2";
+    font-weight: 600;
+    font-size: .8rem;
+    color: darkblue;
+    width: auto;
+    position: absolute;
+    z-index: 1;
+    border: solid;
+    background-color: rgb(227, 222, 222);
+}
+.body_text {
+    font-family: Helvetica,Arial,sans-serif;
+    font-weight: 400;
+    font-size: .8rem;
+    color: black;
+}
+.salutation_info {
+    -webkit-font-smoothing: antialiased;
+    background-color: #e0e4e2;
+    width: 100%;
+    height: 10vh;
+    font-family: system-ui,sans-serif;
+    font-size: .8rem;
+    font-weight: 300;
+    color: black;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    margin-top: 0px;
+    padding-top: 13px;
+    padding-bottom: 10px;
+}

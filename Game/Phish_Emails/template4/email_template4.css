@@ -1,0 +1,77 @@
+/* Set a background color and text color */
+body {
+    background-color: #f5f5f5;
+    color: #333;
+    font-family: Arial, sans-serif;
+  }
+  /* Email container */
+  .email-container {
+    max-width: 1000px;
+    margin: auto;
+   /* margin-top: 150px; */
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  /* Header */
+  .header {
+    background-color: #165191;
+    padding: 10px;
+    text-align: center;
+    color: #fff;
+  }
+  /* Email details */
+  .email-details {
+    margin: 20px 0;
+    padding: 10px;
+    background-color: #eee;
+  }
+  
+  /*  Begin functionality regarding hover text - specifically for the email's sender (from) */
+  .from-details {
+    cursor: pointer;
+  }
+  .from-details:hover::after {
+    content: "customerservice@LinckedIn";
+    background-color: yellow;
+    border: groove;
+    font-weight: bold;
+    color: rgb(3, 3, 3);
+    margin-left: 10px;
+  }
+
+  .link-details {
+    cursor: pointer;
+    color: rgb(61, 99, 239);
+    text-decoration: underline;
+  }
+  .link-details:hover::after {
+    content: "https://in.xero.com/5QLDhrRXFZGEWZLSETJRsGN";
+    background-color: yellow;
+    border: groove;
+    font-weight: bold;
+    color: rgb(3, 3, 3);
+    margin-left: 10px;
+  }
+
+  /* NOT NEEDED FOR THIS TEMPLATE
+  .attachment-details {
+    display: inline-block;
+    padding: 5px;
+    
+    font-size: 12px;
+    cursor: pointer;
+  }
+  
+  
+  /* NOT NEEDED FOR THIS TEMPLATE
+  
+  .attachment-details:hover::after {
+    content: "October_Bill.zip";
+    background-color: yellow;
+    border: groove;
+    font-weight: bold;
+    color: rgb(3, 3, 3);
+    margin-left: 10px;
+  }
+  */
