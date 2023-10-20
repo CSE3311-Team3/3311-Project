@@ -8,6 +8,7 @@ export class Email {
         this.phish = this.isReal();
         this.clues = [];
         this.source = this.determineSource();
+        this.context;
     }
     
     get getSource() {
@@ -21,6 +22,11 @@ export class Email {
     get getClues() {
         return this.clues;
     }
+
+    get getContext() {
+        return this.context;
+    }
+
     isReal(){
         // true == Email is real
         // false == Email is a Phish
@@ -37,16 +43,22 @@ export class Email {
             var quest_num = Math.floor(Math.random() * 6);
             switch(quest_num){
                 case 0:
+                    this.context = "Phish template 1 context";
                     return "./Phish_Emails/template1/email_template.html";
                 case 1:
+                    this.context = "Phish template 2 context";
                     return "./Phish_Emails/template2/email_template2.html";
                 case 2:
+                    this.context = "Phish template 3 context";
                     return "./Phish_Emails/template3/email_template3.html";
                 case 3:
+                    this.context = "Phish template 4 context";
                     return "./Phish_Emails/template4/email_template4.html";
                 case 4:
+                    this.context = "Phish template 5 context";
                     return "./Phish_Emails/template5/email_template5.html";
                 case 5:
+                    this.context = "Phish template 6 context";
                     return "./Phish_Emails/template6/email_template6.html";
                 default:
                     return "default Phish";
@@ -63,12 +75,20 @@ export class Email {
                     var num = Math.floor(Math.random() * Names.length);
                     // Push picked name into clues array
                     this.clues.push(Names[num]);
+
+                    // Adding Context
+                    this.context = "real template 1 context";
+
                     //Return filepath for template
                     return "./Real_Emails/template" + quest_num + "/template" + quest_num +".html";
                 case 2: 
                     var Names = ["Frozen", "Cheddar", "Embargo", "Safe"];
                     var num = Math.floor(Math.random() * Names.length);
                     this.clues.push(Names[num]);
+
+                    // Adding Context
+                    this.context = "real template 2 context";
+                    
                     return "./Real_Emails/template" + quest_num + "/template" + quest_num +".html";
                 case 3:
                     var UserNames = ["Michael", "Leo", "Jacki", "David", "Penny"];
@@ -80,12 +100,28 @@ export class Email {
                     this.clues.push(serviceNames[num]);
                     num = Math.floor(Math.random() * documentNames.length);
                     this.clues.push(documentNames[num]);
+
+                    // Adding Context
+                    this.context = "real template 3 context";
+
                     return "./Real_Emails/template" + quest_num + "/template" + quest_num +".html";
                 case 4:
+
+                    // Adding Context
+                    this.context = "real template 4 context";
+
                     return "./Real_Emails/template4/email_template4.html"
                 case 5:
+
+                    // Adding Context
+                    this.context = "real template 5 context"
+
                     return "./Real_Emails/template5/email_template5.html"
                 case 6:
+
+                    // Adding Context
+                    this.context = "real template 6 context";
+
                     return "./Real_Emails/template6/email_template6.html"
                 case 7:
                     var company_names = ["Google","Yahoo","Microsoft","AOL"];
@@ -142,6 +178,9 @@ export class Email {
                     var day = Math.floor(Math.random() * (max-min) + min);
                     this.clues.push(day.toString());
                     
+                    // Adding Context
+                    this.context = "real template 7 context";
+
                     return "./Real_Emails/template" + quest_num.toString() + "/template" + quest_num.toString() + ".html";
                 default:
                     return "default Real";
