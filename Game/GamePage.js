@@ -1,12 +1,17 @@
 import { Email } from "./Email.js";
 
 var testEmail;
+
 const answers = new Map();
 var QuestionNumber;
 var CurrentScore;
 
 // This will contain all the test questions within a single play session
-const TestQuestions = []; 
+const TestQuestions = [];
+// Using these arrays to keep track of which templates were used
+var real_questions = [];
+var phish_questions = [];
+
 
 window.addEventListener('load', () => {
     document.getElementById("Phish_button").addEventListener("click", phishClick);
@@ -18,6 +23,8 @@ window.addEventListener('load', () => {
     document.getElementById("QuestionNumber").innerHTML = QuestionNumber;
     createTestQuestions(TestQuestions);
     console.log(TestQuestions);
+    console.log(phish_questions);
+    console.log(real_questions);
     document.getElementById("email_temp").setAttribute("src", TestQuestions[QuestionNumber - 1].getSource);
     document.getElementById("high_score").innerHTML = CurrentScore;
     document.getElementById("Context").innerHTML = TestQuestions[QuestionNumber - 1].getContext;
@@ -32,7 +39,7 @@ window.addEventListener('load', () => {
 // Creates the test questions
 function createTestQuestions(TestQuestions){
     for(let i = 0; i < 10; i++){
-        TestQuestions.push(new Email("Question" + i, "Sender" + i, i ));
+        TestQuestions.push(new Email("Question" + i, "Sender" + i, phish_questions, real_questions));
     }
 }
 

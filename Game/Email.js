@@ -1,13 +1,13 @@
 // Possible Email object class for the project
 
 export class Email {
-    constructor(receiver, sender) {
+    constructor(receiver, sender, phish_emails, real_emails) {
         this.receiver = receiver;
         this.sender = sender;
         this.date = new Date();
-        this.phish = this.isReal();
+        this.phish = this.isReal(phish_emails, real_emails);
         this.clues = [];
-        this.source = this.determineSource();
+        this.source = this.determineSource(phish_emails, real_emails);
         this.context;
     }
     
@@ -27,37 +27,57 @@ export class Email {
         return this.context;
     }
 
-    isReal(){
+    isReal(phish_emails, real_emails){
+        // WILL NEED TO UPDATE NUMBERS AS NUMBER OF TEMPLATES CHANGE
         // true == Email is real
         // false == Email is a Phish
-        if(Math.floor(Math.random() * 2) == 1){
+        if(Math.floor(Math.random() * 2) == 1 && phish_emails.length != 6){
             return true;
         }
-        else{
+        else if(Math.floor(Math.random() * 2) == 1 && phish_emails.length == 6){
             return false;
+        }
+        else if(Math.floor(Math.random() * 2) == 0 && real_emails.length != 7){
+            return false;
+        }
+        else if(Math.floor(Math.random() * 2) == 0 && real_emails.length == 7){
+            return true;
         }
     }
     
-    determineSource(){
+    determineSource(phish_emails, real_emails){
+        console.log(this.phish);
+        console.log(phish_emails);
+        console.log(real_emails);
         if (this.phish == false){
             var quest_num = Math.floor(Math.random() * 6);
+            while (phish_emails.find(o => o == quest_num)){
+                quest_num = Math.floor(Math.random() * 6);
+            }
+            console.log(quest_num);
             switch(quest_num){
                 case 0:
+                    phish_emails.push(quest_num);
                     this.context = "Phish template 1 context";
                     return "./Phish_Emails/template1/email_template.html";
                 case 1:
+                    phish_emails.push(quest_num);
                     this.context = "Phish template 2 context";
                     return "./Phish_Emails/template2/email_template2.html";
                 case 2:
+                    phish_emails.push(quest_num);
                     this.context = "Phish template 3 context";
                     return "./Phish_Emails/template3/email_template3.html";
                 case 3:
+                    phish_emails.push(quest_num);
                     this.context = "Phish template 4 context";
                     return "./Phish_Emails/template4/email_template4.html";
                 case 4:
+                    phish_emails.push(quest_num);
                     this.context = "Phish template 5 context";
                     return "./Phish_Emails/template5/email_template5.html";
                 case 5:
+                    phish_emails.push(quest_num);
                     this.context = "Phish template 6 context";
                     return "./Phish_Emails/template6/email_template6.html";
                 default:
@@ -66,9 +86,14 @@ export class Email {
         }
         else {
             var quest_num = Math.floor(Math.random() * 7) + 1; 
+            while (real_emails.find(o => o == quest_num)){
+                quest_num = Math.floor(Math.random() * 7) + 1;
+            }
+                console.log(quest_num);
             // the "* #" portion will change as more real_emtail templates are added 
             switch(quest_num){
                 case 1:
+                    real_emails.push(quest_num);
                     // Arrays of possible Names to insert
                     var Names = ["Woohoo", "Noodle", "InSee"];
                     // Random Number to pick a name with
@@ -82,6 +107,7 @@ export class Email {
                     //Return filepath for template
                     return "./Real_Emails/template" + quest_num + "/template" + quest_num +".html";
                 case 2: 
+                    real_emails.push(quest_num);
                     var Names = ["Frozen", "Cheddar", "Embargo", "Safe"];
                     var num = Math.floor(Math.random() * Names.length);
                     this.clues.push(Names[num]);
@@ -91,6 +117,7 @@ export class Email {
                     
                     return "./Real_Emails/template" + quest_num + "/template" + quest_num +".html";
                 case 3:
+                    real_emails.push(quest_num);
                     var UserNames = ["Michael", "Leo", "Jacki", "David", "Penny"];
                     var serviceNames = ["BitTub", "DocuShare","PageWrite", "SnapEdit", "FileService"];
                     var documentNames = ["TaxReturns", "ProjectCharter","CoporateBudget", "Presentation"];
@@ -106,24 +133,25 @@ export class Email {
 
                     return "./Real_Emails/template" + quest_num + "/template" + quest_num +".html";
                 case 4:
-
+                    real_emails.push(quest_num);
                     // Adding Context
                     this.context = "real template 4 context";
 
                     return "./Real_Emails/template4/email_template4.html"
                 case 5:
-
+                    real_emails.push(quest_num);
                     // Adding Context
                     this.context = "real template 5 context"
 
                     return "./Real_Emails/template5/email_template5.html"
                 case 6:
-
+                    real_emails.push(quest_num);
                     // Adding Context
                     this.context = "real template 6 context";
 
                     return "./Real_Emails/template6/email_template6.html"
                 case 7:
+                    real_emails.push(quest_num);
                     var company_names = ["Google","Yahoo","Microsoft","AOL"];
                     var email_names = ["gmail","yahoo","outlook","aol"];
                     var company_addresses = [
