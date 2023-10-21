@@ -46,15 +46,15 @@ export class Email {
     }
     
     determineSource(phish_emails, real_emails){
-        console.log(this.phish);
-        console.log(phish_emails);
-        console.log(real_emails);
+        // console.log(this.phish);
+        // console.log(phish_emails);
+        // console.log(real_emails);
         if (this.phish == false){
             var quest_num = Math.floor(Math.random() * 6);
             while (phish_emails.find(o => o == quest_num)){
                 quest_num = Math.floor(Math.random() * 6);
             }
-            console.log(quest_num);
+            //console.log(quest_num);
             switch(quest_num){
                 case 0:
                     phish_emails.push(quest_num);
@@ -89,7 +89,7 @@ export class Email {
             while (real_emails.find(o => o == quest_num)){
                 quest_num = Math.floor(Math.random() * 7) + 1;
             }
-                console.log(quest_num);
+                //console.log(quest_num);
             // the "* #" portion will change as more real_emtail templates are added 
             switch(quest_num){
                 case 1:
@@ -108,12 +108,12 @@ export class Email {
                     return "./Real_Emails/template" + quest_num + "/template" + quest_num +".html";
                 case 2: 
                     real_emails.push(quest_num);
-                    var Names = ["Frozen", "Cheddar", "Embargo", "Safe"];
+                    var Names = ["Frost", "Bank of America", "Wells Fargo", "Chase"];
                     var num = Math.floor(Math.random() * Names.length);
                     this.clues.push(Names[num]);
 
                     // Adding Context
-                    this.context = "real template 2 context";
+                    this.context = "You have an account from " + this.clues[0] + " and its the end of the monthly period.";
                     
                     return "./Real_Emails/template" + quest_num + "/template" + quest_num +".html";
                 case 3:

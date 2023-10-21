@@ -14,13 +14,13 @@
 
 </head>
 
-<style>
+<!-- <style>
 /* Reset default styles */
 body, p {
     margin: 0;
     padding: 0;
 }
-</style>
+</style> -->
 
 <body>
     <!-- Create the email container -->
@@ -38,25 +38,31 @@ body, p {
           <!-- Code to generate the subject line with appropriate spacing -->
           <div><b>Subject:&ensp;</b>Account Statement</div>
           <br>
-          <div id="clue2"></div>
+          <div class="bankName centerText" id="clue2"></div>
+          <hr class="lineBreak">
+          <div class = "centerText monthReview"> Your month in review</div>
           <br>
-          <div> Your month in review</div>
-          <br>
-          <span>You have a new statement for your account ....
+          <div class="informAcc"><span class = "centerText ">You have a new statement for your account ....
             <span id="clue3"></span>    
             . Give it a look, get a feel for last month's spending, 
               and plan for the month ahead
-          </span>
+          </span></div>
           <br>
-          <div>
+          <div class= "centerText reviewAccBttn" id="clue5">
             Review your statement
           </div>
           <br>
+          <hr class="lineBreak">
+          <div class="centerText">
+            Thank you for choosing <span id="clue4"></span>
+          </div>
           
-          Thank you for choosing <span id="clue4"></span>
           <br>
           </div>
+          <div class="centerText">
             Do not reply to this automated email.
+          </div>
+            
           </div>
 </body>
 

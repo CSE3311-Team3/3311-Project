@@ -22,9 +22,9 @@ window.addEventListener('load', () => {
     CurrentScore = 0;
     document.getElementById("QuestionNumber").innerHTML = QuestionNumber;
     createTestQuestions(TestQuestions);
-    console.log(TestQuestions);
-    console.log(phish_questions);
-    console.log(real_questions);
+    // console.log(TestQuestions);
+    // console.log(phish_questions);
+    // console.log(real_questions);
     document.getElementById("email_temp").setAttribute("src", TestQuestions[QuestionNumber - 1].getSource);
     document.getElementById("high_score").innerHTML = CurrentScore;
     document.getElementById("Context").innerHTML = TestQuestions[QuestionNumber - 1].getContext;
