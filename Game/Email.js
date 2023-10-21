@@ -119,8 +119,8 @@ export class Email {
                 case 3:
                     real_emails.push(quest_num);
                     var UserNames = ["Michael", "Leo", "Jacki", "David", "Penny"];
-                    var serviceNames = ["BitTub", "DocuShare","PageWrite", "SnapEdit", "FileService"];
-                    var documentNames = ["TaxReturns", "ProjectCharter","CoporateBudget", "Presentation"];
+                    var serviceNames = ["Github", "DocuShare","PageWrite", "SnapEdit", "FileService"];
+                    var documentNames = ["ClassProject2", "ProjectCharter","CompanyBudget", "Presentation"];
                     var num = Math.floor(Math.random() * UserNames.length);
                     this.clues.push(UserNames[num]);
                     num = Math.floor(Math.random() * serviceNames.length);
@@ -129,7 +129,8 @@ export class Email {
                     this.clues.push(documentNames[num]);
 
                     // Adding Context
-                    this.context = "real template 3 context";
+                    this.context = "You were recently assigned on a team with " + this.clues[0] + " for an assignment. "
+                                    + "The entire team decided to collaborate on the written documents through the " + this.clues[1] + " service.";
 
                     return "./Real_Emails/template" + quest_num + "/template" + quest_num +".html";
                 case 4:
