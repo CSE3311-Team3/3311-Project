@@ -10,6 +10,7 @@ window.addEventListener('message', (event) => {
     console.log(event.origin);
     return;
   }
+
     clues = event.data;
     var clue1 = document.getElementById("clue1");
     var clue2 = document.getElementById("clue2");
