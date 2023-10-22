@@ -5,9 +5,11 @@ window.addEventListener('load', () => {
 });
   
 window.addEventListener('message', (event) => {
-    if(event.origin !== "http://127.0.0.1:5500"){ // Might need to find a way to specify this
-      return;
-    }
+  if(event.origin !== "https://cse3311-team3.github.io"){
+    console.log("mismatched origin?");
+    console.log(event.origin);
+    return;
+  }
     clues = event.data;
     // Retrieve clue containers in the HTML template
     var clue1 = document.getElementById("clue1");
