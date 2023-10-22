@@ -95,14 +95,15 @@ export class Email {
                 case 1:
                     real_emails.push(quest_num);
                     // Arrays of possible Names to insert
-                    var Names = ["Woohoo", "Noodle", "InSee"];
+                    var Names = ["Overleaf", "Yahoo", "Outlook", "Google"];
                     // Random Number to pick a name with
                     var num = Math.floor(Math.random() * Names.length);
                     // Push picked name into clues array
                     this.clues.push(Names[num]);
 
                     // Adding Context
-                    this.context = "real template 1 context";
+                    this.context = "You recently tried to login to " + this.clues[0] + " and quickly realized that you forgot your password."
+                                    + "You started the process to reset your password 8 hours ago.";
 
                     //Return filepath for template
                     return "./Real_Emails/template" + quest_num + "/template" + quest_num +".html";

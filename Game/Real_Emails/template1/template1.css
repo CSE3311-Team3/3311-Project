@@ -1,14 +1,31 @@
-
-/* Joe's tooltipText styling */
-
-/* .from-details {
-  cursor: pointer;
+.resetPasswordBtn {
+  margin-top: 3em;
+  margin-bottom: 3em;
+  width: fit-content;
+  display: flex;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 5px;
+  border-radius: 5px;
+  color: white;
 }
-.from-details:hover::after {
-  content: attr(hoverText);
-  background-color: yellow;
-  border: groove;
-  font-weight: bold;
-  color: rgb(3, 3, 3);
-  margin-left: 10px;
-} */
+
+.viewAccSpanLine {
+  margin-top: 1em;
+}
+
+.ifBtnSpanLine {
+  margin-top: 1em;
+  margin-bottom: 1em;
+}
+
+.hyperlink {
+  color: #4183C4;
+}
+.hyperlink:hover {
+  text-decoration: underline;
+}
+
+.leftIndent {
+  margin-left: 5px;
+}
