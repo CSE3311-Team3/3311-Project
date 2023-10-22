@@ -18,9 +18,9 @@ window.addEventListener('load', () => {
 });
 
 window.addEventListener('message', (event) => {
-    if(event.origin !== "https://cse3311-team3.github.io/3311-Project"){ // Might need to find a way to specify this
-    console.log("mismatched origin?");
-    console.log(event.origin);
+    if(event.origin !== "https://cse3311-team3.github.io"){
+      console.log("mismatched origin?");
+      console.log(event.origin);
       return;
     }
     clues = event.data;

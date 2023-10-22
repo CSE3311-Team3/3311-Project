@@ -26,7 +26,7 @@ body, p {
     <!-- Create the email container -->
     <div class="email-container">
         <div class="header">
-            <p>Security alert</p>
+            <p>Password Reset</p>
         </div>
         <!-- Includes the from, subject, and attachment details -->
         <div class = "email-details">
@@ -36,24 +36,24 @@ body, p {
                 </div>
             </div>
              <!-- Code to generate the subject line with appropriate spacing -->
-            <div><b>Subject:&ensp;</b>Security alert</div>
+            <div><b>Subject:&ensp;</b>Password Reset</div>
             <br>
         </div>
         <!-- Actual content of the email -->
         <div class="content">
-            <div>A new sign-in on Windows</div>
-            <div id="clue4"></div>
+            <span class="leftIndent">We got a request to reset your<spanid="clue4"></span> password.</span>
+            <div class="resetPasswordBtn" id="clue2">Reset password</div>
+            <div class="leftIndent">If you ignore this message, your password won't be changed.</div>
+            <div class="viewAccSpanLine leftIndent">
+                <span >If you didn't request a password reset, let us know. Or you can also also view 
+                    <span class="hyperlink" id="clue4"> your account settings</span>.
+                </span>
+            </div>
+            
             <br>
-            <span>We noticed a new sign-in to your <span id="clue2"></span> Account on a Windows device. If this was you, 
-              you don't need to do anything. If not, we'll help you secure your account.
-            </span>
+            <span class="ifBtnSpanLine leftIndent">If the button above does not appear, please copy and paste this link into your browser's address bar:</span>
             <br>
-            <br>
-            <div id="clue5" title="">Check Activity</div>
-            <br>
-            <span>You can also see security activity at
-              <span id="clue3" style="display: inline;" title=""></span>
-            </span>
+            <span class="leftIndent" id="clue3"></span> 
         </div>
     </div>
 </body>

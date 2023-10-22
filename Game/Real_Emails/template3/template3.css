@@ -1,0 +1,30 @@
+.centerText {
+  text-align: center;
+}
+
+.viewInvite {
+  background: rgb(26, 120, 171);
+  width: fit-content;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 5px;
+  border-radius: 5px;
+  color: white;
+  font-weight: bolder;
+}
+
+.hyperlink {
+  color: #4183C4;
+}
+
+.boldText {
+  font-weight: bolder;
+}
+
+.lnbreak {
+  border: 1px solid;
+}
+
+.subjectLine {
+  font-size: 20px;
+}

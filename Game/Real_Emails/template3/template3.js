@@ -5,11 +5,12 @@ window.addEventListener('load', () => {
 });
   
 window.addEventListener('message', (event) => {
-    if(event.origin !== "https://cse3311-team3.github.io/3311-Project"){ // Might need to find a way to specify this
+  if(event.origin !== "https://cse3311-team3.github.io"){
     console.log("mismatched origin?");
     console.log(event.origin);
-      return;
-    }
+    return;
+  }
+
     clues = event.data;
     var clue1 = document.getElementById("clue1");
     var clue2 = document.getElementById("clue2");
@@ -21,19 +22,21 @@ window.addEventListener('message', (event) => {
     var clue8 = document.getElementById("clue8");
     var clue9 = document.getElementById("clue9");
     var clue10 = document.getElementById("clue10");
+    var clue11 = document.getElementById("clue11");
 
     clue1.innerHTML = clues[0];
     clue1.setAttribute("title","noreply@" + clues[1] + ".com");
     clue2.innerHTML = clues[0] + " ";
     clue3.innerHTML = clues[1];
-    clue4.setAttribute("title","https://" + clues[1] + ".com/" + clues[2] + "/invitations");
+    clue4.setAttribute("title","https://"   + clues[1] + ".com/" +clues[0] + "/" + clues[2] + "/invitations");
     clue5.innerHTML = "https://" + clues[1] + ".com/" + clues[2];
     clue5.setAttribute("title", "https://" + clues[1] + ".com/" + clues[2]);
     clue6.innerHTML = clues[0];
-    clue6.setAttribute("title", "https://" + clues[1] + ".com/" + clues[1]);
+    clue6.setAttribute("title", "https://" + clues[1] + ".com/" + clues[0]);
     clue7.innerHTML = "playerName";
     clue8.innerHTML = clues[0];
     clue9.setAttribute("title","http://" + clues[1] + ".com/settings/blocked_users?block_user=" + clues[0]);
     clue10.setAttribute("title","http://" + clues[1] + ".com/settings/reported_abuse?report_abuse=" + clues[0])
+    clue11.setAttribute("title","https://"   + clues[1] + ".com/" +clues[0] + "/" + clues[2] + "/invitations");
   }
 );
