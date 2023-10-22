@@ -121,6 +121,7 @@ function updateQuestion(dir) {
 
 // Sends clues for the displayed question to the Iframe
 function sendQuestionToIframe(){
+    console.log(origin);
     const iframe = document.querySelector("iframe");
     var cluez = TestQuestions[QuestionNumber - 1].getClues
     iframe.contentWindow.postMessage(cluez, origin);
