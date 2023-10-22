@@ -18,7 +18,7 @@ window.addEventListener('load', () => {
 });
 
 window.addEventListener('message', (event) => {
-    if(event.origin !== "http://127.0.0.1:5500"){ // Might need to find a way to specify this
+    if(event.origin !== "https://cse3311-team3.github.io/3311-Project"){ // Might need to find a way to specify this
       return;
     }
     clues = event.data;
