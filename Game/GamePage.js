@@ -14,24 +14,26 @@ var phish_questions = [];
 
 
 window.addEventListener('load', () => {
-    document.getElementById("Phish_button").addEventListener("click", phishClick);
-    document.getElementById("Real_button").addEventListener("click", realClick);
-    document.getElementById("Next_button").addEventListener("click", nextClick);
-    document.getElementById("Prev_button").addEventListener("click", prevClick);
     QuestionNumber = 1;
     CurrentScore = 0;
-    document.getElementById("QuestionNumber").innerHTML = QuestionNumber;
     createTestQuestions(TestQuestions);
     // console.log(TestQuestions);
     // console.log(phish_questions);
     // console.log(real_questions);
     document.getElementById("email_temp").setAttribute("src", TestQuestions[QuestionNumber - 1].getSource);
+    document.querySelector('iframe').onload = function(){
+        sendQuestionToIframe();
+    };    
+
+    document.getElementById("Phish_button").addEventListener("click", phishClick);
+    document.getElementById("Real_button").addEventListener("click", realClick);
+    document.getElementById("Next_button").addEventListener("click", nextClick);
+    document.getElementById("Prev_button").addEventListener("click", prevClick);
+    document.getElementById("QuestionNumber").innerHTML = QuestionNumber;
     document.getElementById("high_score").innerHTML = CurrentScore;
     document.getElementById("Context").innerHTML = TestQuestions[QuestionNumber - 1].getContext;
 
-    document.querySelector('iframe').onload = function(){
-        sendQuestionToIframe();
-    };
+
 })  
 
 
@@ -123,12 +125,16 @@ function updateQuestion(dir) {
     
     document.getElementById("email_temp").setAttribute("src", TestQuestions[QuestionNumber - 1].getSource);
     document.getElementById("Context").innerHTML = TestQuestions[QuestionNumber - 1].getContext;
-    sendQuestionToIframe();
+    document.querySelector('iframe').onload = function(){
+        sendQuestionToIframe();
+    };    
 }
 
 // Sends clues for the displayed question to the Iframe
 function sendQuestionToIframe(){
-    console.log(origin);
+    // console.log(origin);
+    // console.log(QuestionNumber);
+    // console.log(TestQuestions[QuestionNumber - 1].getSource);
     const iframe = document.querySelector("iframe");
     var cluez = TestQuestions[QuestionNumber - 1].getClues
     iframe.contentWindow.postMessage(cluez, origin);
