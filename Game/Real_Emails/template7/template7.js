@@ -18,11 +18,11 @@ window.addEventListener('load', () => {
 });
 
 window.addEventListener('message', (event) => {
-    if(event.origin !== "https://cse3311-team3.github.io"){
-      console.log("mismatched origin?");
-      console.log(event.origin);
-      return;
-    }
+    // if(event.origin !== "https://cse3311-team3.github.io"){
+    //   console.log("mismatched origin?");
+    //   console.log(event.origin);
+    //   return;
+    // }
     clues = event.data;
     var company_name = document.getElementsByClassName("company_name");
     var company_address = document.getElementById("company_address");

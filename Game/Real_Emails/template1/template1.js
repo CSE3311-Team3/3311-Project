@@ -5,11 +5,11 @@ window.addEventListener('load', () => {
 });
   
 window.addEventListener('message', (event) => {
-  if(event.origin !== "https://cse3311-team3.github.io"){
-    console.log("mismatched origin?");
-    console.log(event.origin);
-    return;
-  }
+  // if(event.origin !== "https://cse3311-team3.github.io"){
+  //   console.log("mismatched origin?");
+  //   console.log(event.origin);
+  //   return;
+  // }
     clues = event.data;
     // Retrieve clue containers in the HTML template
     var clue1 = document.getElementById("clue1");
