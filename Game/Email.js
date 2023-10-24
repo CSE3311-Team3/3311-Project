@@ -52,7 +52,10 @@ export class Email {
         if (this.phish == false){
             var quest_num = Math.floor(Math.random() * 6);
             while (phish_emails.find(o => o == quest_num)){
-                quest_num = Math.floor(Math.random() * 6);
+                quest_num += 1;
+                if(quest_num == 6){
+                    quest_num = 0;
+                }
             }
             //console.log(quest_num);
             switch(quest_num){
@@ -87,7 +90,10 @@ export class Email {
         else {
             var quest_num = Math.floor(Math.random() * 7) + 1; 
             while (real_emails.find(o => o == quest_num)){
-                quest_num = Math.floor(Math.random() * 7) + 1;
+                quest_num += 1;
+                if (quest_num == 8){
+                    quest_num = 0;
+                }
             }
                 //console.log(quest_num);
             // the "* #" portion will change as more real_emtail templates are added 
