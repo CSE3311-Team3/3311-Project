@@ -1,9 +1,11 @@
-/* set a background image */
+/* set a background image and have it cover the screen */
 body
 {
     background-image: url('background.jpg');
+    background-size: cover;
 }
 
+/*set the size color and alignment of the texts on screen*/
 .page_title 
 {
     font-size: 84px;
@@ -17,6 +19,7 @@ body
     color: white;
 }
 
+/*add buttons arrange to prefered height, width, alignment */
 .button
 {
     background-color: #000080;
