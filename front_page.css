@@ -1,31 +1,29 @@
-/* set a background image and have it cover the screen */
+/* set a background image */
 body
 {
     background-image: url('background.jpg');
-    background-size: cover;
 }
 
-/*set the size color and alignment of the texts on screen*/
 .page_title 
 {
     font-size: 84px;
     text-align: center;
-    color: white;
+    color: black;
+    font-family: 'Courier New', Courier, monospace;
 }
 
 .score
 {
     font-size: 24px;
-    color: white;
+    color: black;
+    font-family: 'Courier New', Courier, monospace;
 }
 
-/*add buttons arrange to prefered height, width, alignment */
 .button
 {
-    background-color: #000080;
+    background-color: #165191;
     color: white;
     padding: 50px;
-    border-radius: 50px;
     width: 500px;
     height: 5px;
     position:absolute;
@@ -35,14 +33,14 @@ body
     cursor: pointer;
     text-align:center;
     font-size: 36px;
+    font-family: 'Courier New', Courier, monospace;
     
 }
 .button2
 {
-    background-color: #000080;
+    background-color: #165191;
     color: white;
     padding: 50px;
-    border-radius: 50px;
     width: 500px;
     height: 5px;
     position:absolute;
@@ -52,5 +50,6 @@ body
     cursor: pointer;
     text-align:center;
     font-size: 36px;
+    font-family: 'Courier New', Courier, monospace;
     
 }
