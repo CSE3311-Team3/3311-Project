@@ -1,0 +1,24 @@
+.screen {
+    justify-content: center;
+    align-items: center;
+    float: center;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    background-image: url('images/phone_screen.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 460px 100vh;
+}
+.text_bubble {
+    background-image: url('images/text_bubble.png');
+    background-repeat: no-repeat;
+    background-size: 100px 100px;
+}
+.txt_bub {
+    width: 50%;
+    align-items: center;
+    justify-content: center;
+    float: center;
+    display: flex;
+}
