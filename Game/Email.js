@@ -9,6 +9,7 @@ export class Email {
         this.clues = [];
         this.source = this.determineSource(phish_emails, real_emails);
         this.context;
+        this.explanation;
     }
     
     get getSource() {
@@ -110,7 +111,10 @@ export class Email {
                     // Adding Context
                     this.context = "You recently tried to login to " + this.clues[0] + " and quickly realized that you forgot your password."
                                     + "You started the process to reset your password 8 hours ago.";
-
+                    this.explanation = "This is a real email because the addresses used throughout the email appear to be from who the sender says they are." +
+                        " None of the address in any of the links are from another third-party. There are no obvious mistakes in the grammar." +
+                        " If you'd also recently made a password change request for the given account, then this email would also be expected." +
+                        " If this email was sent completely out of the blue, that's a big sign that this is a phishing attempt."
                     //Return filepath for template
                     return "./Real_Emails/template" + quest_num + "/template" + quest_num +".html";
                 case 2: 
@@ -118,10 +122,15 @@ export class Email {
                     var Names = ["Frost", "Bank of America", "Wells Fargo", "Chase"];
                     var num = Math.floor(Math.random() * Names.length);
                     this.clues.push(Names[num]);
+                    this.clues.push(Names[num].toLowerCase(). replace(" ","_"));
 
                     // Adding Context
                     this.context = "You have an account from " + this.clues[0] + " and its the end of the monthly period.";
-                    
+                    this.explanation = "This is a real email mainly because it appears to be legitimate." + 
+                        " Address on all the links appear to be from who the sender claims to be." + 
+                        " It's also a normally expected email as you have an account from " + this.clues[0] +
+                        " and its usual time they send statements." + " As a precaution, you can also view the statement directly from" + 
+                        this.clues[0] + "'s website instead of using the links provided here."
                     return "./Real_Emails/template" + quest_num + "/template" + quest_num +".html";
                 case 3:
                     real_emails.push(quest_num);
@@ -132,13 +141,16 @@ export class Email {
                     this.clues.push(UserNames[num]);
                     num = Math.floor(Math.random() * serviceNames.length);
                     this.clues.push(serviceNames[num]);
+                    this.clues.push(serviceNames[num].toLowerCase().replace(" ", "_"));
                     num = Math.floor(Math.random() * documentNames.length);
                     this.clues.push(documentNames[num]);
-
                     // Adding Context
                     this.context = "You were recently assigned on a team with " + this.clues[0] + " for an assignment. "
                                     + "The entire team decided to collaborate on the written documents through the " + this.clues[1] + " service.";
-
+                    this.explanation = "This is a real email. The first evidence for legitimacy are how links appear to be from " +
+                        "whole the sender says they are. Remember, you can usually check links without having to click them by hovering " +
+                        "your cursor over them. Another piece of evidence is how there are no major errors in grammar within the message." +
+                        " However, perfect grammar is not undeniable proof that an email isn't malicious."
                     return "./Real_Emails/template" + quest_num + "/template" + quest_num +".html";
                 case 4:
                     real_emails.push(quest_num);
