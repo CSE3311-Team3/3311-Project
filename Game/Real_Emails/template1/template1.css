@@ -22,6 +22,7 @@
 .hyperlink {
   color: #4183C4;
 }
+
 .hyperlink:hover {
   text-decoration: underline;
 }

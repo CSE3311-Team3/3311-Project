@@ -32,16 +32,17 @@ export class Email {
         // WILL NEED TO UPDATE NUMBERS AS NUMBER OF TEMPLATES CHANGE
         // true == Email is real
         // false == Email is a Phish
-        if(Math.floor(Math.random() * 2) == 1 && phish_emails.length != 6){
+        var realIfOdd = Math.floor(Math.random() * 2);
+        if(realIfOdd == 1 && phish_emails.length != 8){
             return true;
         }
-        else if(Math.floor(Math.random() * 2) == 1 && phish_emails.length == 6){
+        else if(realIfOdd == 1 && phish_emails.length == 8){
             return false;
         }
-        else if(Math.floor(Math.random() * 2) == 0 && real_emails.length != 7){
+        else if(realIfOdd == 0 && real_emails.length != 7){
             return false;
         }
-        else if(Math.floor(Math.random() * 2) == 0 && real_emails.length == 7){
+        else if(realIfOdd == 0 && real_emails.length == 7){
             return true;
         }
     }
@@ -51,39 +52,72 @@ export class Email {
         // console.log(phish_emails);
         // console.log(real_emails);
         if (this.phish == false){
-            var quest_num = Math.floor(Math.random() * 6);
+
+            var quest_num = Math.floor(Math.random() * 8) + 1;
             while (phish_emails.find(o => o == quest_num)){
                 quest_num += 1;
-                if(quest_num == 6){
-                    quest_num = 0;
+                if(quest_num == 9){
+                    quest_num = 1;
                 }
             }
             //console.log(quest_num);
             switch(quest_num){
-                case 0:
+                case 1:
                     phish_emails.push(quest_num);
                     this.context = "Phish template 1 context";
                     return "./Phish_Emails/template1/email_template.html";
-                case 1:
+                case 2:
                     phish_emails.push(quest_num);
                     this.context = "Phish template 2 context";
                     return "./Phish_Emails/template2/email_template2.html";
-                case 2:
+                case 3:
                     phish_emails.push(quest_num);
                     this.context = "Phish template 3 context";
                     return "./Phish_Emails/template3/email_template3.html";
-                case 3:
+                case 4:
                     phish_emails.push(quest_num);
                     this.context = "Phish template 4 context";
                     return "./Phish_Emails/template4/email_template4.html";
-                case 4:
+                case 5:
                     phish_emails.push(quest_num);
                     this.context = "Phish template 5 context";
                     return "./Phish_Emails/template5/email_template5.html";
-                case 5:
+                case 6:
                     phish_emails.push(quest_num);
                     this.context = "Phish template 6 context";
                     return "./Phish_Emails/template6/email_template6.html";
+                case 7:
+                    phish_emails.push(quest_num);
+                    var Names = ["Office 365", "Fidelity", "Amazon","Gmail", "Walmart","Yahoo"];
+                    var num = Math.floor(Math.random() * 6);
+                    this.clues.push(Names[num]);
+                    this.context = "You have an " + this.clues[0] + " account and have not made any recent account changes to your profile.";
+                    if(this.clues[0] == "Office 365"){
+                        this.context = "You are a university student who regularly checks their school email." + this.context;
+                    }
+                    this.explanation = "This is a phishing email for several reasons. A major reason is the fact that a notification email regarding" +
+                    " a PENDING password change is highly unusual. Usually these types of notifications are sent AFTER a password is changed and the process" +
+                    " is generally quick enough that it doesn't stay on a pending status. 'Failure to Verify' is a grammatical error. " +
+                    " These types of emails also usually threaten the user with some sort of time limit as in this case with the 'closure of your account'." +
+                    " The address in the link also points to a shortened URL, a common sign for a malicious link."
+                    return "./Phish_Emails/M_template7/template7.html";
+                case 8:
+                    phish_emails.push(quest_num);
+                    var firstNames = ["Kim", "Teddy", "Margarett", "George", "Robert", "Maria"];
+                    var lastNames = ["Smith", "Cruz", "Lopez", "White", "Steinbach"] 
+                    num = Math.floor(Math.random() * 6);
+                    this.clues.push(firstNames[num]);
+                    num = Math.floor(Math.random() * 5);
+                    this.clues.push(lastNames[num]);
+                    this.context = "You are a university student and just received this email from another student. You have never met this student" +
+                    " and haven't made any changes to your account."
+                    this.explanation = "This is a phishing email for several reasons. First obvious reason is how this email was sent unwarranted from" +
+                        "someone you don't know. There are also several grammar/spelling mistakes that can be seen throughout the message." +
+                        "The address for the 'Login' link is also some sort of shortened URL, a common sign for malicious links." +
+                        "Attacks like these also usually threaten the user with some sort of time limit to push users to make quick decisions" +
+                        " without thinking too much on the context." + 
+                        "Its likely that this email was sent from another student account that fell for this phishing attack."
+                    return "./Phish_Emails/M_template8/template8.html";
                 default:
                     return "default Phish";
             }
@@ -93,7 +127,7 @@ export class Email {
             while (real_emails.find(o => o == quest_num)){
                 quest_num += 1;
                 if (quest_num == 8){
-                    quest_num = 0;
+                    quest_num = 1;
                 }
             }
                 //console.log(quest_num);
