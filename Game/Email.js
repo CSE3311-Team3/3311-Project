@@ -42,17 +42,17 @@ export class Email {
 		else if(Math.floor(Math.random() * 2) == 1 && phish_emails.length == 6){
 			return false;
 		}
-		else if(Math.floor(Math.random() * 2) == 0 && real_emails.length != 7){
+		else if(Math.floor(Math.random() * 2) == 0 && real_emails.length != 9){
 			return false;
 		}
-		else if(Math.floor(Math.random() * 2) == 0 && real_emails.length == 7){
+		else if(Math.floor(Math.random() * 2) == 0 && real_emails.length == 9){
 			return true;
 		}
 		else {
             /* added this clause since sometimes, none of the if-conditions were being
             met which caused isReal() and getPhish() to return undefined. 
             we may have to redo the randomization a bit. */
-			var rand_num = Math.floor(Math.random() * 1000);
+			var rand_num = Math.floor(Math.random() * 10000);
 			return (rand_num % 2 == 0);
 		}
 	}
@@ -109,10 +109,10 @@ export class Email {
 			}
 		}
 		else {
-			var quest_num = Math.floor(Math.random() * 7) + 1; 
+			var quest_num = Math.floor(Math.random() * 9) + 1; 
 			while (real_emails.find(o => o == quest_num)){
 				quest_num += 1;
-				if (quest_num == 8){
+				if (quest_num == 10){
 					quest_num = 0;
 				}
 			}
@@ -175,17 +175,17 @@ export class Email {
 			case 5:
 				real_emails.push(quest_num);
 				// Adding Context
-				this.context = "real template 5 context"
+				this.context = "real template 5 context";
 				// Adding Explanation
 				this.explanation = "Real template 5 explanation";
-				return "./Real_Emails/template5/email_template5.html"
+				return "./Real_Emails/template5/email_template5.html";
 			case 6:
 				real_emails.push(quest_num);
 				// Adding Context
 				this.context = "real template 6 context";
 				// Adding Explanation
 				this.explanation = "Real template 6 explanation";
-				return "./Real_Emails/template6/email_template6.html"
+				return "./Real_Emails/template6/email_template6.html";
 			case 7:
 				real_emails.push(quest_num);
 				var company_names = ["Google","Yahoo","Microsoft","AOL"];
@@ -248,6 +248,63 @@ export class Email {
 				this.explanation = "This is a real email because the sender is using a legitimate email address for a reputable company, and the physical address shown on the bottom can be verified as well. "
                                     + "There are no misspellings or abnormal grammar usage, and the message conveyed is straight to the point. The link provided evidently leads to a page on the "
                                     + "company's website rather than a page on a website unrelated to the supposed sender.";
+				return "./Real_Emails/template" + quest_num.toString() + "/template" + quest_num.toString() + ".html";
+			case 8:
+				real_emails.push(quest_num);
+				var greetings = ["Hello","Good morning","Good afternoon","Good evening"];
+				var num = Math.floor(Math.random() * greetings.length);
+				this.clues.push(greetings[num]);
+				var senders = ["Sally","Jamie","Jessica","Haley","Zara"];
+				var num2 = Math.floor(Math.random() * senders.length);
+				this.clues.push(senders[num2]);
+				var shops = ["BlueJeanz","FitFashion","LazyBeauty","RoseyRed"];
+				var num3 = Math.floor(Math.random() * shops.length);
+				this.clues.push(shops[num3]);
+				var days = ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"];
+				var num4 = Math.floor(Math.random() * days.length);
+				this.clues.push(days[num4]);
+				var percents = ["30","35","40","45","50"];
+				var num5 = Math.floor(Math.random() * percents.length);
+				this.clues.push(percents[num5]);
+				this.context = "The owner of a popular Instagram boutique is letting you know about a huge sale they are hosting and is encouraging"
+				+ " you to consider shop with them.";
+				this.explanation = "This Instagram Direct Message is legit because the messenger is not trying to lead you to a page outside of Instagram"
+				+ " and does not provide you with any external links. " + senders[num2] + " does not request any personal information, and you can safely"
+				+ " click on their Instagram handle without putting your data at risk since Instagram is a secure platform.";
+				return "./Real_Emails/template" + quest_num.toString() + "/template" + quest_num.toString() + ".html";
+			case 9:
+				real_emails.push(quest_num);
+				var choice = Math.floor(Math.random() * 10000);
+				if(choice%2==0) {
+					this.clues.push(0);
+					var schools = ["The University of Texas at Arlington","Baylor University","Texas Tech University","Texas A&M University"];
+					var num = Math.floor(Math.random() * schools.length);
+					this.clues.push(schools[num]);
+					var alert_names = ["MavAlert","BearAlert","RaidAlert","RevAlert"];
+					this.clues.push(alert_names[num]);
+					var sender = Math.floor(Math.random() * 99999) + 10000;
+					this.clues.push(sender);
+					this.context =  schools[num] + " is sending out test alerts to ensure that their alert system works.";
+					this.explanation = "This text message is legit because " + schools[num] + " is simply trying to alert you of something without"
+					+ " prompting you to click on any links or asking you to relay personal information. The sender is not asking anything of you.";
+				}
+				else {
+					this.clues.push(1);
+					var code = Math.floor(Math.random() * 999999) + 100000;
+					this.clues.push(code);
+					var companies = ["Venmo", "Cash App", "Zelle", "PayPal", "MoneyGram"];
+					var num = Math.floor(Math.random() * companies.length);
+					this.clues.push(companies[num]);
+					var sender = Math.floor(Math.random() * 99999) + 10000;
+					this.clues.push(sender);
+					this.context = companies[num] + " is sending you a verification code after you have just created an"
+					+ " account on their platform or logged in after some time of inactivity.";
+					this.explanation = "This text message is legit because you are receiving a verification code right after signing"
+					+ " up or logging into an application, which is normal. Furthermore, " + companies[num] + " is letting you know"
+					+ " that you can enter the code directly in their app which means the message is really coming from them. If it was a scammer, they"
+					+ " likely would have given you a weird link that does not directly lead to " + companies[num] + "'s" 
+					+ " website.";
+				}
 				return "./Real_Emails/template" + quest_num.toString() + "/template" + quest_num.toString() + ".html";
 			default:
 				return "default Real";
