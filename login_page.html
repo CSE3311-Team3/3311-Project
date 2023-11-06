@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html>
+
+<!-- Begin HTML functionality  -->
+<head><title>Phish Detective</title></head>
+
+<body>
+    <h1 class="header">Welcome!</h1>
+
+<!-- Begin CSS functionality -->
+<style>
+    body {
+        background-color: rgba(37, 117, 136, 0.223);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+        padding: 0;
+    }
+    .container {
+        max-width: 300px;
+        padding: 20px;
+        background-color: white;
+        border-radius: 5px;
+        margin-top: 30px;
+        border: 8px solid gray;
+    }
+    .upper-text{
+        position: fixed;
+        top: 0; 
+        padding-top: 30px;
+        padding: 90px;
+        text-align: center;
+        display: flex;
+    }
+    .header{
+        position: fixed;
+        top:20px;
+        left:0;
+        right:0;
+        text-align: center;
+    }
+    #submitButton{
+        text-decoration: none;
+        color: black;
+        border-style: solid;
+        border-radius: 3px;
+        padding: 6px;
+        background-color: rgb(240, 240, 240);
+        border-width: 1px;
+    }
+    #skipButton {
+        text-decoration: none;
+        color: black;
+        border-style: solid;
+        border-radius: 3px;
+        padding: 6px;
+        background-color: rgb(240, 240, 240);
+        border-width: 1px;
+    }
+    #show_password {
+        font-style: normal;
+        color: black;
+        border-style: solid;
+        border-radius: 3px;
+        padding: 6px;
+        background-color: rgb(240, 240, 240);
+        border-width: 1px;
+    }
+    .password-strength-box{
+        position: absolute;
+        bottom: 20px;
+        max-width: 200px;
+        text-align: center;
+        margin-bottom: 90px;
+        font-weight: 300;
+        padding-left: 20px;
+        padding-right: 20px;
+        color: white;
+    }
+</style>
+
+    <p class="upper-text">
+        Your username is retained for the duration of your game, but the entered password is never stored.<br> 
+        It is only used to assess its strength. This step can be skipped.
+    </p>
+
+    <div class="container">
+        <h1></h1>
+        <form>
+            <label for="username">Username:&nbsp;</label>
+            <input type="text" id="username" name="username" ><br><br>
+
+            <label for="password">Password:&ensp;</label>
+            <input type="password" id="password" name="password" ><br><br>
+
+            <button id="submitButton" type="button" onclick="getLogin()">Submit</button>
+            
+            <button id="skipButton" type="button" onclick="skipLogin()">Skip</button>
+          
+            <button id="show_password" type="button" onclick="togglePassword()">Show Password</button>
+        </form>
+
+        <p id="message"></p>
+    </div>
+
+    <div class="password-strength-box" id="password-strength-box"></div>
+
+
+    <!-- Begin javascript functionality -->  
+    <script>
+        var username;
+
+        const passwordInput = document.getElementById("password");
+        const passwordStrength = document.getElementById("password-strength-box");
+
+        var isPasswordVisible = false;
+
+        passwordInput.addEventListener("input", checkPasswordStrength);
+        
+        // This function toggles the password visibility
+        function togglePassword() {
+            isPasswordVisible = !isPasswordVisible;
+            if (isPasswordVisible) {
+                passwordInput.type = "text"; // Show the password
+            } else {
+                passwordInput.type = "password"; // Hide the password
+            }
+        }
+  
+        // This function calculates the strength of the password entered by testing it against various 
+        // combinations of regular expressions
+        function calculatePasswordStrength(password){
+
+            // Used to update background color for password-strength-box
+            var passStrenBox = document.getElementById("password-strength-box");
+
+            // Password length
+            var len = password.length;
+
+            // Regular expression patterns saved to variables for easier testing:
+
+            var specChar = /[!@#$%^&*()_+{}\[\]:;<>,.?~\\|]/;       // Special character pattern
+            var lower = /[a-z]/;                                    // Lowercase letter pattern
+            var upper = /[A-Z]/;                                    // Uppercase letter pattern
+            var num = /\d/;                                         // number pattern
+
+            // Clears the password strength box when the password box is empty
+            // and displays it when the password box is not empty
+            if(len == 0){
+                passStrenBox.style.display = "none";
+            }
+            else{
+                passStrenBox.style.display = "block";
+            }
+
+
+            // Rules for Weak passwords: 1 or 2 regular expression patterns activated
+            if(len < 8){
+                passStrenBox.style.backgroundColor = "red";
+                return "Weak";
+            }
+            if(len >= 8 && lower.test(password) && !upper.test(password) && !specChar.test(password)
+                    && !num.test(password)){
+                passStrenBox.style.backgroundColor = "red";
+                return "Weak";
+            }
+            if(len >= 8 && !lower.test(password) && upper.test(password) && !specChar.test(password)
+                    && !num.test(password)){
+                passStrenBox.style.backgroundColor = "red";
+                return "Weak";
+            }
+            if(len >= 8 && !lower.test(password) && !upper.test(password) && specChar.test(password)
+                    && !num.test(password)){
+                passStrenBox.style.backgroundColor = "red";
+                return "Weak";
+            }
+            if(len >= 8 && !lower.test(password) && !upper.test(password) && !specChar.test(password)
+                    && num.test(password)){
+                passStrenBox.style.backgroundColor = "red";
+                return "Weak";
+            }
+            if(len >= 8 && lower.test(password) && upper.test(password) && !specChar.test(password)
+                    && !num.test(password)){
+                passStrenBox.style.backgroundColor = "red";
+                return "Weak";
+            }
+            if(len >= 8 && lower.test(password) && !upper.test(password) && !specChar.test(password)
+                    && num.test(password)){
+                passStrenBox.style.backgroundColor = "red";
+                return "Weak";
+            }
+            if(len >= 8 && lower.test(password) && !upper.test(password) && specChar.test(password)
+                    && !num.test(password)){
+                passStrenBox.style.backgroundColor = "red";
+                return "Weak";
+            }
+            if(len >= 8 && !lower.test(password) && upper.test(password) && !specChar.test(password)
+                    && num.test(password)){
+                passStrenBox.style.backgroundColor = "red";
+                return "Weak";
+            }
+            if(len >= 8 && !lower.test(password) && upper.test(password) && specChar.test(password)
+                    && !num.test(password)){
+                passStrenBox.style.backgroundColor = "red";
+                return "Weak";
+            }
+            if(len >= 8 && !lower.test(password) && !upper.test(password) && specChar.test(password)
+                    && num.test(password)){
+                passStrenBox.style.backgroundColor = "red";
+                return "Weak";
+            }
+            
+
+            // Rules for Moderate passwords: 3 regular expression patterns activated
+            if(len >= 8 && len <= 12 && lower.test(password) && upper.test(password) && num.test(password)
+                    && specChar.test(password)){
+                passStrenBox.style.backgroundColor = "orange";
+                return "Moderate";
+            }
+            if(len >= 8 && lower.test(password) && upper.test(password) && num.test(password)
+                    && !specChar.test(password)){
+                passStrenBox.style.backgroundColor = "orange";
+                return "Moderate";
+            }
+            if(len >= 8 && lower.test(password) && upper.test(password) && !num.test(password)
+                    && specChar.test(password)){
+                passStrenBox.style.backgroundColor = "orange";
+                return "Moderate";
+            }
+            if(len >= 8 && lower.test(password) && !upper.test(password) && num.test(password)
+                    && specChar.test(password)){
+                passStrenBox.style.backgroundColor = "orange";
+                return "Moderate";
+            }
+            if(len >= 8 && !lower.test(password) && upper.test(password) && num.test(password)
+                    && specChar.test(password)){
+                passStrenBox.style.backgroundColor = "orange";
+                return "Moderate";
+            }
+         
+            // Rule for Strong passwords: 4 regular expression patterns activated
+            if(len > 12 && lower.test(password) && upper.test(password) && num.test(password) 
+                    && specChar.test(password)){
+
+                passStrenBox.style.backgroundColor = "green";
+                return "Strong";
+            } 
+
+            return "Error";
+         }
+
+        // This function checks the password strength before passing it to the display function
+        function checkPasswordStrength() {
+            const password = passwordInput.value;
+            const strength = calculatePasswordStrength(password);
+            displayPasswordStrength(strength);
+        }
+        
+        // This function displays the password strength to the user
+        function displayPasswordStrength(strength) {
+            passwordStrength.textContent = `Password Strength: ${strength}`;
+        }
+
+        // This function gets the username to be used in other aspects of the game
+        function getLogin() {
+            username = document.getElementById("username").value;
+            window.location.href = "Game/GamePage.html";
+        }
+
+        // This function sets the default username if the skip button is pressed
+        function skipLogin() {
+            username = "Default-Name";
+            window.location.href = "Game/GamePage.html";
+        }
+
+    </script>
+
+</body>
+</html>
