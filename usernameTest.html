@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+
+<!-- This file is meant for testing purposes only. It shows how to extract an item from local storage -->
+<!-- and display it. This file should be removed before the final iteration -->
+
+<head>
+    <title>Display Username</title>
+</head>
+
+<body>
+  <div>
+    username:&nbsp;<span id="user-name"></span>
+  </div>
+
+  <script>
+    
+    const username = localStorage.getItem('user-name');
+
+    document.getElementById('user-name').textContent = username;
+
+  </script>
+</body>
+
+</html>
