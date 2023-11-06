@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+    <meta charset="UTF-8">
+    <title>Phish Detective</title>
+    <link rel="stylesheet" href="template8.css">
+
+    <!-- This code is responsible for linking to Google API to create the paperclip icon in the attachment details -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script type="module" src="template8.js"></script>
+</head>
+
+<style>
+/* Reset default styles */
+body, p {
+    margin: 0;
+    padding: 0;
+}
+</style>
+
+<body>
+    <!-- Create the email container -->
+    <div class="email-container">
+        <div class="header">
+            <p>Action Now!</p>
+        </div>
+        <!-- Includes the from, subject, and attachment details -->
+        <div class = "email-details">
+            <!-- Code to generate the from line with appropriate spacing -->
+            <div><b>From:&ensp;&emsp;</b>
+                <div id="clue1" style="display: inline;" title="">
+                </div>
+            </div>
+            <div></div><b>Subject:&ensp;</b>Action NOW!!</div>
+            <br>
+        </div>
+        <!-- Actual content of the email -->
+        <div class="content">
+          <span>Our record indicates that you recently made a 2-login portal request to terminate your Office 365 email. Kindly indicates the two info 
+            logins as soon as possible. To avoid termination within 24 hrs, we expect you to strictly adhere and address it. And this process has begun by our administrator.
+          </span>
+
+          <span> If you have only one college/University account, fill in the correct user and password then submit. But if you are in a dual credit college/University, 
+            Pls fill in the correct username and password for both school and submit. Brows the URL below into the address bar of your web browser to either re-verify or
+            terminate your account.
+          </span>
+          <div id="clue2">Login</div>
+
+          <span>if this request was made accidentally and you have no knowledge of it, you are advised to verify your account below. 
+            Failure to re-verify will result in the closing of your account and you will lose all your files (includes a suite of productivity applications such as Word, Excel,
+            PowerPoint, Outlook, and more, along with cloud serrvices like OneDrive and Microsoft Teams.) on these Microsoft 365 accounts. Login.
+          </span>
+
+          <div>Scan the QR code attached</div>
+          <!-- Will need to generate a qr code -->
+          <div></div>
+          
+          Failure to Verify will result in closure of your account.
+
+          Thank You Microsoft 2023
+          
+    </div>
+</body>
+
+</html>

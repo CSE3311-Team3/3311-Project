@@ -27,50 +27,44 @@ export class Email {
 	get getContext() {
 		return this.context;
 	}
-
-	get getExplanation() {
+  
+  get getExplanation() {
 		return this.explanation;
 	}
+  
+  isReal(phish_emails, real_emails){
+        // WILL NEED TO UPDATE NUMBERS AS NUMBER OF TEMPLATES CHANGE
+        // true == Email is real
+        // false == Email is a Phish
+        var realIfOdd = Math.floor(Math.random() * 2);
+        if(realIfOdd == 1 && phish_emails.length != 8){
+            return true;
+        }
+        else if(realIfOdd == 1 && phish_emails.length == 8){
+            return false;
+        }
+        else if(realIfOdd == 0 && real_emails.length != 7){
+            return false;
+        }
+        else if(realIfOdd == 0 && real_emails.length == 7){
+            return true;
+        }
+    } 
+  
+  determineSource(phish_emails, real_emails){
+        // console.log(this.phish);
+        // console.log(phish_emails);
+        // console.log(real_emails);
+        if (this.phish == false){
 
-	isReal(phish_emails, real_emails){
-		// WILL NEED TO UPDATE NUMBERS AS NUMBER OF TEMPLATES CHANGE
-		// true == Email is real
-		// false == Email is a Phish
-		if(Math.floor(Math.random() * 2) == 1 && phish_emails.length != 6){
-			return true;
-		}
-		else if(Math.floor(Math.random() * 2) == 1 && phish_emails.length == 6){
-			return false;
-		}
-		else if(Math.floor(Math.random() * 2) == 0 && real_emails.length != 9){
-			return false;
-		}
-		else if(Math.floor(Math.random() * 2) == 0 && real_emails.length == 9){
-			return true;
-		}
-		else {
-            /* added this clause since sometimes, none of the if-conditions were being
-            met which caused isReal() and getPhish() to return undefined. 
-            we may have to redo the randomization a bit. */
-			var rand_num = Math.floor(Math.random() * 10000);
-			return (rand_num % 2 == 0);
-		}
-	}
-    
-	determineSource(phish_emails, real_emails){
-		// console.log(this.phish);
-		// console.log(phish_emails);
-		// console.log(real_emails);
-		if (this.phish == false){
-			var quest_num = Math.floor(Math.random() * 6);
-			while (phish_emails.find(o => o == quest_num)){
-				quest_num += 1;
-				if(quest_num == 6){
-					quest_num = 0;
-				}
-			}
-			//console.log(quest_num);
-			switch(quest_num){
+            var quest_num = Math.floor(Math.random() * 8) + 1;
+            while (phish_emails.find(o => o == quest_num)){
+                quest_num += 1;
+                if(quest_num == 9){
+                    quest_num = 1;
+            }
+        }
+          			switch(quest_num){
 			case 0:
 				phish_emails.push(quest_num);
 				this.context = "Phish template 1 context";
@@ -96,7 +90,7 @@ export class Email {
 				this.context = "Phish template 5 context";
 				this.explanation = "Phish template 5 explanation";
 				return "./Phish_Emails/template5/email_template5.html";
-			case 5:
+ 			case 5:
 				phish_emails.push(quest_num);
 				this.context = "A company is emailing you about an opportunity to earn money through PayPal if you follow the directions provided in the links given.";
 				this.explanation = "This is a phish email because the sender is telling you that you could possiby receive money through your PayPal account " 
@@ -104,11 +98,48 @@ export class Email {
                 + "click before getting more information about the supposed funds you could receive. Usually, when an unfamiliar sender wants you to click on a link to another "
                 + "page before you can get a clear understanding of the content in their email, that page likely contains malware or may make data stored on your device vulnerable.";
 				return "./Phish_Emails/template6/email_template6.html";
-			default:
-				return "default Phish";
-			}
-		}
-		else {
+      case 6:
+        phish_emails.push(quest_num);
+        this.context = "Phish template 6 context";
+        return "./Phish_Emails/template6/email_template6.html";
+      case 7:
+        phish_emails.push(quest_num);
+        var Names = ["Office 365", "Fidelity", "Amazon","Gmail", "Walmart","Yahoo"];
+        var num = Math.floor(Math.random() * 6);
+        this.clues.push(Names[num]);
+        this.context = "You have an " + this.clues[0] + " account and have not made any recent account changes to your profile.";
+        if(this.clues[0] == "Office 365"){
+          this.context = "You are a university student who regularly checks their school email." + this.context;
+        }
+        this.explanation = "This is a phishing email for several reasons. A major reason is the fact that a notification email regarding" +
+          " a PENDING password change is highly unusual. Usually these types of notifications are sent AFTER a password is changed and the process" +
+          " is generally quick enough that it doesn't stay on a pending status. 'Failure to Verify' is a grammatical error. " +
+          " These types of emails also usually threaten the user with some sort of time limit as in this case with the 'closure of your account'." +
+          " The address in the link also points to a shortened URL, a common sign for a malicious link."
+        return "./Phish_Emails/M_template7/template7.html";
+      case 8:
+          phish_emails.push(quest_num);
+          var firstNames = ["Kim", "Teddy", "Margarett", "George", "Robert", "Maria"];
+          var lastNames = ["Smith", "Cruz", "Lopez", "White", "Steinbach"] 
+          num = Math.floor(Math.random() * 6);
+          this.clues.push(firstNames[num]);
+          num = Math.floor(Math.random() * 5);
+          this.clues.push(lastNames[num]);
+          this.context = "You are a university student and just received this email from another student. You have never met this student" +
+            " and haven't made any changes to your account."
+          this.explanation = "This is a phishing email for several reasons. First obvious reason is how this email was sent unwarranted from" +
+            "someone you don't know. There are also several grammar/spelling mistakes that can be seen throughout the message." +
+            "The address for the 'Login' link is also some sort of shortened URL, a common sign for malicious links." +
+            "Attacks like these also usually threaten the user with some sort of time limit to push users to make quick decisions" +
+            " without thinking too much on the context." + 
+            "Its likely that this email was sent from another student account that fell for this phishing attack."
+            return "./Phish_Emails/M_template8/template8.html";
+       default:
+           return "default Phish";
+
+            }
+        }
+   else {
 			var quest_num = Math.floor(Math.random() * 9) + 1; 
 			while (real_emails.find(o => o == quest_num)){
 				quest_num += 1;
@@ -116,8 +147,7 @@ export class Email {
 					quest_num = 0;
 				}
 			}
-			//console.log(quest_num);
-			// the "* #" portion will change as more real_emtail templates are added 
+     			// the "* #" portion will change as more real_emtail templates are added 
 			switch(quest_num){
 			case 1:
 				real_emails.push(quest_num);
@@ -127,65 +157,71 @@ export class Email {
 				var num = Math.floor(Math.random() * Names.length);
 				// Push picked name into clues array
 				this.clues.push(Names[num]);
-
 				// Adding Context
 				this.context = "You recently tried to login to " + this.clues[0] + " and quickly realized that you forgot your password."
                                     + "You started the process to reset your password 8 hours ago.";
-				// Adding Explanation
-				this.explanation = "Real template 1 explanation";
+        this.explanation = "This is a real email because the addresses used throughout the email appear to be from who the sender says they are." +
+                        " None of the address in any of the links are from another third-party. There are no obvious mistakes in the grammar." +
+                        " If you'd also recently made a password change request for the given account, then this email would also be expected." +
+                        " If this email was sent completely out of the blue, that's a big sign that this is a phishing attempt."
+                    //Return filepath for template
+       return "./Real_Emails/template" + quest_num + "/template" + quest_num +".html";
+       case 2: 
+                    real_emails.push(quest_num);
+                    var Names = ["Frost", "Bank of America", "Wells Fargo", "Chase"];
+                    var num = Math.floor(Math.random() * Names.length);
+                    this.clues.push(Names[num]);
+                    this.clues.push(Names[num].toLowerCase(). replace(" ","_"));
 
-				//Return filepath for template
-				return "./Real_Emails/template" + quest_num + "/template" + quest_num +".html";
-			case 2: 
-				real_emails.push(quest_num);
-				var Names = ["Frost", "Bank of America", "Wells Fargo", "Chase"];
-				var num = Math.floor(Math.random() * Names.length);
-				this.clues.push(Names[num]);
-
-				// Adding Context
-				this.context = "You have an account from " + this.clues[0] + " and its the end of the monthly period.";
-				// Adding Explanation
-				this.explanation = "Real template 2 explanation";    
-				return "./Real_Emails/template" + quest_num + "/template" + quest_num +".html";
-			case 3:
-				real_emails.push(quest_num);
-				var UserNames = ["Michael", "Leo", "Jacki", "David", "Penny"];
-				var serviceNames = ["Github", "DocuShare","PageWrite", "SnapEdit", "FileService"];
-				var documentNames = ["ClassProject2", "ProjectCharter","CompanyBudget", "Presentation"];
-				var num = Math.floor(Math.random() * UserNames.length);
-				this.clues.push(UserNames[num]);
-				num = Math.floor(Math.random() * serviceNames.length);
-				this.clues.push(serviceNames[num]);
-				num = Math.floor(Math.random() * documentNames.length);
-				this.clues.push(documentNames[num]);
-
-				// Adding Context
-				this.context = "You were recently assigned on a team with " + this.clues[0] + " for an assignment. "
+                    // Adding Context
+                    this.context = "You have an account from " + this.clues[0] + " and its the end of the monthly period.";
+                    this.explanation = "This is a real email mainly because it appears to be legitimate." + 
+                        " Address on all the links appear to be from who the sender claims to be." + 
+                        " It's also a normally expected email as you have an account from " + this.clues[0] +
+                        " and its usual time they send statements." + " As a precaution, you can also view the statement directly from" + 
+                        this.clues[0] + "'s website instead of using the links provided here."
+                    return "./Real_Emails/template" + quest_num + "/template" + quest_num +".html";
+          
+       case 3:
+                    real_emails.push(quest_num);
+                    var UserNames = ["Michael", "Leo", "Jacki", "David", "Penny"];
+                    var serviceNames = ["Github", "DocuShare","PageWrite", "SnapEdit", "FileService"];
+                    var documentNames = ["ClassProject2", "ProjectCharter","CompanyBudget", "Presentation"];
+                    var num = Math.floor(Math.random() * UserNames.length);
+                    this.clues.push(UserNames[num]);
+                    num = Math.floor(Math.random() * serviceNames.length);
+                    this.clues.push(serviceNames[num]);
+                    this.clues.push(serviceNames[num].toLowerCase().replace(" ", "_"));
+                    num = Math.floor(Math.random() * documentNames.length);
+                    this.clues.push(documentNames[num]);
+                    // Adding Context
+                    this.context = "You were recently assigned on a team with " + this.clues[0] + " for an assignment. "
                                     + "The entire team decided to collaborate on the written documents through the " + this.clues[1] + " service.";
-				// Adding Explanation
-				this.explanation = "Real template 3 explanation";
-				return "./Real_Emails/template" + quest_num + "/template" + quest_num +".html";
-			case 4:
-				real_emails.push(quest_num);
-				// Adding Context
-				this.context = "real template 4 context";
-				// Adding Explanation
-				this.explanation = "Real template 4 explanation";
-				return "./Real_Emails/template4/email_template4.html"
-			case 5:
-				real_emails.push(quest_num);
-				// Adding Context
-				this.context = "real template 5 context";
-				// Adding Explanation
-				this.explanation = "Real template 5 explanation";
-				return "./Real_Emails/template5/email_template5.html";
-			case 6:
-				real_emails.push(quest_num);
-				// Adding Context
-				this.context = "real template 6 context";
-				// Adding Explanation
-				this.explanation = "Real template 6 explanation";
-				return "./Real_Emails/template6/email_template6.html";
+                    this.explanation = "This is a real email. The first evidence for legitimacy are how links appear to be from " +
+                        "whole the sender says they are. Remember, you can usually check links without having to click them by hovering " +
+                        "your cursor over them. Another piece of evidence is how there are no major errors in grammar within the message." +
+                        " However, perfect grammar is not undeniable proof that an email isn't malicious."
+                    return "./Real_Emails/template" + quest_num + "/template" + quest_num +".html";    
+          
+          
+        case 4:
+                    real_emails.push(quest_num);
+                    // Adding Context
+                    this.context = "real template 4 context";
+
+                    return "./Real_Emails/template4/email_template4.html"
+        case 5:
+                    real_emails.push(quest_num);
+                    // Adding Context
+                    this.context = "real template 5 context"
+
+                    return "./Real_Emails/template5/email_template5.html"
+       case 6:
+                    real_emails.push(quest_num);
+                    // Adding Context
+                    this.context = "real template 6 context";
+
+                    return "./Real_Emails/template6/email_template6.html"
 			case 7:
 				real_emails.push(quest_num);
 				var company_names = ["Google","Yahoo","Microsoft","AOL"];
