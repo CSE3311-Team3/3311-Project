@@ -1,9 +1,9 @@
-/* set a background image */
+/* set a background color */
 body
 {
-    background-image: url('background.jpg');
+    background-color: rgba(43, 168, 199, 0.223);
 }
-
+/*set the size color and alignment of the texts on screen*/
 .page_title 
 {
     font-size: 84px;
@@ -18,7 +18,7 @@ body
     color: black;
     font-family: 'Courier New', Courier, monospace;
 }
-
+/*add buttons arrange to prefered height, width, alignment */
 .button
 {
     background-color: #165191;
