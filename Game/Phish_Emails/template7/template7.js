@@ -5,21 +5,20 @@ window.addEventListener('load', () => {
 });
   
 window.addEventListener('message', (event) => {
-  
-	clues = event.data;
-	var greet = document.getElementById("greeting");
-	var body = document.getElementById("message_body");
-	var salut = document.getElementById("salutation");
-	var pics = document.getElementsByClassName("prof_pic");
-	var sender = document.getElementById("sender_name");
-    
-	greet.innerHTML = "";
-	body.innerHTML = "";
-	salut.innerHTML = "";
+  // if(event.origin !== "https://cse3311-team3.github.io"){
+  //   console.log("mismatched origin?");
+  //   console.log(event.origin);
+  //   return;
+  // }
+    clues = event.data;
+    // Retrieve clue containers in the HTML template
+    var clue1 = document.getElementById("clue1");
+    var clue2 = document.getElementById("clue2");
+    var clue3 = document.getElementById("clue3");
 
-	for(var i = 0; i < pics.length; i++) {
-		pics[i].src = "images/prof_pics/sample_profpic.png";
-	}
-
-	sender.innerHTML = "_" + clues[2] + "_";
-});
+    //Inserting clues into clue containers
+    clue1.innerHTML = clues[0];
+    clue2.innerHTML = clues[0];
+    clue3.setAttribute("title", "[shortURL.at/dfaefdf]");
+  }
+);

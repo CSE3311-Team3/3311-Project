@@ -1,0 +1,97 @@
+#phone_screen {
+    justify-content: center;
+    align-items: center;
+    width: 500px;
+    height: 685px;
+    max-width: 500px;
+    min-width: 500px;
+    max-height: 685px;
+    min-height: 685px;
+    display: inline-block;
+    background-image: url('images/DM_screen.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 500px 685px;
+    background-color: transparent;
+}
+#site_name {
+    margin-top: 13px;
+    margin-left: 141px;
+    height: 40px;
+    width: 175px;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+}
+#sender {
+    position: absolute;
+    margin-top: 73px;
+    margin-left: 66px;
+    width: 270px;
+    max-width: 270px;
+    min-width: 270px;
+    height: 44px;
+    min-height: 44px;
+    max-height: 44px;
+    text-align: center;
+}
+#prof_pic1 {
+    width: 42px;
+    min-width: 42px;
+    max-width: 42px;
+    height: 44px;
+    min-height: 44px;
+    max-height: 44px;
+    float: left;
+}
+#sender_name {
+    width: 220px;
+    min-width: 220px;
+    max-width: 220px;
+    height: 44px;
+    min-height: 44px;
+    max-height: 44px;
+    float: right;
+    align-items: center;
+    padding-top: 8px;
+    font-family: Helvetica, Arial, sans-serif;
+    font-size: 18px;
+    font-weight: 500;
+    text-align: left;
+}
+#message {
+    font-family: Helvetica,Arial,Sans-Serif;
+    font-size: 13.5px;
+    margin-top: 140px;
+    margin-left: 20px;
+    width: 390px;
+    max-width: 390px;
+    min-height: 390px;
+    height: 395px;
+    max-height: 395px;
+    min-height: 395px;
+}
+#prof_pic2 {
+    width: 42px;
+    min-width: 42px;
+    max-width: 42px;
+    height: 45px;
+    min-height: 45px;
+    max-height: 45px; 
+    float: left;
+    margin-top: 348px;
+}
+#message_text {
+    font-family: Helvetica,Arial,Sans-Serif;
+    font-size: 15px;
+    width: 310px;
+    max-width: 310px;
+    min-height: 310px;
+    height: 355px;
+    max-height: 355px;
+    min-height: 355px;
+    float: right;
+    margin-top: 15px;
+    margin-right: 12px;
+    text-align: left;
+}

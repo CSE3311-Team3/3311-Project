@@ -1,25 +1,56 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <meta charset="UTF-8">
     <title>Phish Detective</title>
-    <link href="template7.css" rel="stylesheet"/>
+    <link rel="stylesheet" href="template7.css">
+
+    <!-- This code is responsible for linking to Google API to create the paperclip icon in the attachment details -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <script type="module" src="template7.js"></script>
 </head>
+
+<style>
+/* Reset default styles */
+body, p {
+    margin: 0;
+    padding: 0;
+}
+</style>
+
 <body>
-    <div id="phone_screen"> 
-        <img id="site_name" src="images/Instagram.jpg"> 
-        <div id="sender">
-            <img id="prof_pic1" class="prof_pic" src="">
-            <div id="sender_name">user101</div>
+    <!-- Create the email container -->
+    <div class="email-container">
+        <div class="header">
+            <p>Re: Password Requirement Pending</p>
         </div>
-        <div id="message">
-            <img id="prof_pic2" class="prof_pic" src="images/prof_pics/sample_profpic.png">
-            <div id="message_text">
-                <span id="greeting"></span><br><br>
-                <span id="message_body"></span><br><br>
-                <span id="salutation"></span><br>
+        <!-- Includes the from, subject, and attachment details -->
+        <div class = "email-details">
+            <!-- Code to generate the from line with appropriate spacing -->
+            <div><b>From:&ensp;&emsp;</b>
+                <div id="clue1" style="display: inline;" title="">
+                </div>
             </div>
+            <div></div><b>Subject:&ensp;</b>Password Requirement Pending</div>
+            <br>
         </div>
-    </div>  
-</body> 
+        <!-- Actual content of the email -->
+        <div class="content">
+          <span>Our record indicates that you recently made a request to terminate your <span id="clue2"></span> email. And this process
+            has begun by our administrator.
+          </span>
+          <br>
+          <br>
+          <div>If this request was made accidentally and you have no 
+            knowledge of it, you are advisted to copy and <span id="clue3" class="hyperlink">view in browser</span> to cancel your request.
+          </div>
+          <br>
+          Failure to Verify will result in the closure of your account
+        </div>
+    </div>
+</body>
+
+</html>
