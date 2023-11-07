@@ -1,7 +1,9 @@
 # CSE 3311 Semester Project
 
 ## How To Run:
-The simplest way to run this project is through Visual Studio Code. Steps:
+The simplest way to run this project is to go to the Github hosted webpage: https://cse3311-team3.github.io/3311-Project/
+
+If the link doesn't work, the easiest alternate method is through Visual Studio Code. Steps:
 1. Download the repository
 2. Open the repository in Visual Studio Code
 3. Install the "Live Server" extension if you haven't already.
