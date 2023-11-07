@@ -7,7 +7,6 @@
 </head>
 <body>
     <div class = "game_name">Phish Detective</div>
-    
     <div class="Question_Banner"><span id="QuestionNumber"></span> /10</div>
     <div class="selected_choice" id="ChoiceSelected"></div>
     <div class="context_email">
@@ -15,13 +14,21 @@
         <div class="email_area" id="Email">
             <iframe id="email_temp" class="samp_email"></iframe>
         </div>
+        <div id="explanation">
+            <div id="result"></div>
+            <div id="expl_txt"></div>
+            <button id="close_expl">CLOSE</button>
+        </div>
     </div>
+    
     <div class="selections">
         <button class="prev_button" type="button" id="Prev_button">PREV</button>
         <button class="phish_button" type="button" id="Phish_button">PHISH</button>
         <button class="real_button" type="button" id="Real_button">REAL</button>
         <button class="next_button" type="button" id="Next_button">NEXT</button>
+        <button class="explan_button" type="button" id="Explan_button">EXPLANATION</button>
     </div>
+    
     <div>Current Score: 
         <div id="high_score"></div>
     </div>

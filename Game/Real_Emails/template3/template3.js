@@ -23,19 +23,19 @@ window.addEventListener('message', (event) => {
     var clue10 = document.getElementById("clue10");
     var clue11 = document.getElementById("clue11");
 
-    clue1.innerHTML = clues[0];
-    clue1.setAttribute("title","noreply@" + clues[1] + ".com");
+    clue1.innerHTML = clues[1];
+    clue1.setAttribute("title","noreply@" + clues[2] + ".com");
     clue2.innerHTML = clues[0] + " ";
-    clue3.innerHTML = clues[1];
-    clue4.setAttribute("title","https://"   + clues[1] + ".com/" +clues[0] + "/" + clues[2] + "/invitations");
-    clue5.innerHTML = "https://" + clues[1] + ".com/" + clues[2];
-    clue5.setAttribute("title", "https://" + clues[1] + ".com/" + clues[2]);
+    clue3.innerHTML = clues[3];
+    clue4.setAttribute("title","https://"   + clues[2] + ".com/" +clues[0] + "/" + clues[2] + "/invitations");
+    clue5.innerHTML = "https://" + clues[2] + ".com/" + clues[3];
+    clue5.setAttribute("title", "https://" + clues[2] + ".com/" + clues[2]);
     clue6.innerHTML = clues[0];
-    clue6.setAttribute("title", "https://" + clues[1] + ".com/" + clues[0]);
+    clue6.setAttribute("title", "https://" + clues[2] + ".com/" + clues[0]);
     clue7.innerHTML = "playerName";
     clue8.innerHTML = clues[0];
-    clue9.setAttribute("title","http://" + clues[1] + ".com/settings/blocked_users?block_user=" + clues[0]);
-    clue10.setAttribute("title","http://" + clues[1] + ".com/settings/reported_abuse?report_abuse=" + clues[0])
-    clue11.setAttribute("title","https://"   + clues[1] + ".com/" +clues[0] + "/" + clues[2] + "/invitations");
+    clue9.setAttribute("title","http://" + clues[2] + ".com/settings/blocked_users?block_user=" + clues[0]);
+    clue10.setAttribute("title","http://" + clues[2] + ".com/settings/reported_abuse?report_abuse=" + clues[0])
+    clue11.setAttribute("title","https://"   + clues[2] + ".com/" +clues[0] + "/" + clues[3] + "/invitations");
   }
 );

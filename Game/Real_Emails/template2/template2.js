@@ -18,7 +18,7 @@ window.addEventListener('message', (event) => {
     var clue5 = document.getElementById("clue5");
 
     clue1.innerHTML = clues[0];
-    clue1.setAttribute("title", "alerts@notify." + clues[0] +".com");
+    clue1.setAttribute("title", "alerts@notify." + clues[1] +".com");
     clue2.innerHTML = clues[0];
     if (clues[0] == "Wells Fargo") {
       console.log("Wells fargo");
@@ -35,6 +35,6 @@ window.addEventListener('message', (event) => {
 
     clue3.innerHTML = Math.floor(Math.random() * (10000 - 1000) + 1000);
     clue4.innerHTML = clues[0] + " for your banking.";
-    clue5.setAttribute("title", clues[0] + ".com/accounts/98b4b296a64e4a729f/statements/51dfae")
+    clue5.setAttribute("title", clues[1] + ".com/accounts/98b4b296a64e4a729f/statements/51dfae")
   }
 );
