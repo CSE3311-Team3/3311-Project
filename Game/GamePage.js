@@ -30,7 +30,7 @@ window.addEventListener('load', () => {
 	document.getElementById("Next_button").addEventListener("click", nextClick);
 	document.getElementById("Prev_button").addEventListener("click", prevClick);
 	document.getElementById("close_expl").addEventListener("click", closeExpl);
-    document.getElementById("Explan_button").addEventListener("click", setExpl);
+  document.getElementById("Explan_button").addEventListener("click", setExpl);
 	document.getElementById("QuestionNumber").innerHTML = QuestionNumber;
 	document.getElementById("high_score").innerHTML = CurrentScore;
 	document.getElementById("Context").innerHTML = TestQuestions[QuestionNumber - 1].getContext;
@@ -131,7 +131,7 @@ function buttonVisib() {
 function updateQuestion(dir) {
 	if(dir === "next") {
 		if(QuestionNumber == 10) {
-			window.location.href = "../EndScreen/EndScreen.html";
+			window.location.href = "../Last_Page/last_page.html";
 		}
 		else {
 			QuestionNumber += 1;

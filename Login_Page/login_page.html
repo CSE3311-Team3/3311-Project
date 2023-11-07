@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+  
+<head><title>Phish Detective</title></head>
+<link href="login_page.css" rel="stylesheet"/>  
+
+<body>
+    <h1 class="header">Welcome!</h1>
+
+    <p class="upper-text">
+        Your username is retained for the duration of your game, but the entered password is never stored.<br> 
+        It is only used to assess its strength. This step can be skipped.
+    </p>
+
+    <div class="container">
+        <h1></h1>
+        <form>
+        <!-- Username -->
+        <label for="username">Username:&nbsp;</label>
+        <input type="text" id="username" name="username" ><br><br>
+
+        <!-- Password -->
+        <label for="password">Password:&ensp;</label>
+        <input type="password" id="password" name="password"><br><br>
+
+        <!-- Buttons -->
+        <button type="button" id="submitButton">Submit</button>
+        <button type ="button" id="skipButton">Skip</button>
+        <button type="button" id="toggleButton">Show Password</button>
+        </form>
+
+    </div>
+
+    <div class="password-strength-box" id="password-strength-box"></div>
+
+    <script type="module" src="login_page.js"></script>
+
+</body>
+</html>

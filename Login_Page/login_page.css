@@ -1,0 +1,41 @@
+body {
+    background-color: rgba(37, 117, 136, 0.223);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+}
+.container {
+    padding: 20px;
+    background-color: white;
+    border-radius: 5px;
+    width: auto;
+    border: 8px solid gray;
+}
+.upper-text{
+    position: fixed;
+    top: 0;
+    padding: 90px;
+    text-align: center;
+    width: auto; 
+}
+.header{
+    position: fixed;
+    top:20px;
+    left:0;
+    right:0;
+    text-align: center;
+}
+.password-strength-box{
+    position: absolute;
+    bottom: 20px;
+    max-width: 200px;
+    text-align: center;
+    margin-bottom: 90px;
+    font-weight: 300;
+    padding-left: 20px;
+    padding-right: 20px;
+    color: white;
+}

@@ -1,3 +1,3 @@
 window.addEventListener('load', () => {
-  window.location.href = "login_page.html";
+  window.location.href = "Front_Page/front_page.html";
 });
