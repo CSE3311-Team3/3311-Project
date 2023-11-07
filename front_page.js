@@ -1,6 +1,6 @@
 //call the elements for functionality
 const display_score = document.getElementById("display_score");
-const button = documnet.getElementById("play");
+const button = document.getElementById("play");
 
 //initialize score
 let score = 0;
