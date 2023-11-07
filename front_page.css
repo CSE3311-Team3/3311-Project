@@ -27,7 +27,7 @@ body
     width: 500px;
     height: 5px;
     position:absolute;
-    top: 50%;
+    top: 65%;
     left: 35%;
     transform: translate(-20,-20);
     cursor: pointer;
