@@ -175,8 +175,7 @@ function getLogin() {
     localStorage.setItem('user-name', username);
 
     // Redirects the page
-    window.location.href = 'usernameTest.html';
-    //window.location.href = 'index.html';
+    window.location.href = "Game/GamePage.html";
 }
 
 // This function sets the default username if the skip button is pressed
@@ -189,7 +188,7 @@ function skipLogin() {
     localStorage.setItem('user-name', username);
 
     // Redirects the page
-    window.location.href = 'usernameTest.html';
+    window.location.href = 'Game/GamePage.html';
     //window.location.href = 'index.html';
 }
 
