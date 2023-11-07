@@ -1,0 +1,38 @@
+/* set a background color */
+body
+{
+    background-color: rgba(43, 168, 199, 0.223);
+}
+/*set the size color and alignment of the texts on screen*/
+.page_title 
+{
+    font-size: 84px;
+    text-align: center;
+    color: black;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+.score
+{
+    font-size: 24px;
+    color: black;
+    font-family: 'Courier New', Courier, monospace;
+}
+/*add buttons arrange to prefered height, width, alignment */
+.button
+{
+    background-color: #165191;
+    color: white;
+    padding: 50px;
+    width: 500px;
+    height: 5px;
+    position:absolute;
+    top: 50%;
+    left: 35%;
+    transform: translate(-20,-20);
+    cursor: pointer;
+    text-align:center;
+    font-size: 36px;
+    font-family: 'Courier New', Courier, monospace;
+    
+}
