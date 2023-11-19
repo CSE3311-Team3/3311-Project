@@ -109,6 +109,7 @@ function tracking_answer() {
 function checkAnswer() {
 	if(TestQuestions[QuestionNumber - 1].getPhish == answers.get(QuestionNumber)){
 		CurrentScore += 1;
+		localStorage.setItem("high-score", CurrentScore);
 		document.getElementById("high_score").innerHTML = CurrentScore;
 	}
 }

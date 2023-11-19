@@ -13,7 +13,7 @@ window.addEventListener('message', (event) => {
 	var pics = document.getElementsByClassName("prof_pic");
 	var sender = document.getElementById("sender_name");
     
-	greet.innerHTML = clues[0] + " Playername! " + "This is " + clues[1] + " from the " + clues[2] + " shop here on Instagram.";
+	greet.innerHTML = clues[0] + " " + localStorage.getItem('user-name') + "! " + "This is " + clues[1] + " from the " + clues[2] + " shop here on Instagram.";
 	body.innerHTML = "We are having our annual blowout sale next " + clues[3] + " where all merchandise will be " + clues[4] 
   + " percent off or more! Come check us out at @_" + clues[2] + "_ and make sure to follow if you like what you see!";
 	salut.innerHTML = "Have a great rest of your day!";

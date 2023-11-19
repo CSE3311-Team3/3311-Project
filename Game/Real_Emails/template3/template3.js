@@ -32,7 +32,7 @@ window.addEventListener('message', (event) => {
     clue5.setAttribute("title", "https://" + clues[2] + ".com/" + clues[2]);
     clue6.innerHTML = clues[0];
     clue6.setAttribute("title", "https://" + clues[2] + ".com/" + clues[0]);
-    clue7.innerHTML = "playerName";
+    clue7.innerHTML = localStorage.getItem('user-name');
     clue8.innerHTML = clues[0];
     clue9.setAttribute("title","http://" + clues[2] + ".com/settings/blocked_users?block_user=" + clues[0]);
     clue10.setAttribute("title","http://" + clues[2] + ".com/settings/reported_abuse?report_abuse=" + clues[0])

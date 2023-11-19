@@ -21,7 +21,7 @@ window.addEventListener('message', (event) => {
     clue1.innerHTML = clues[0];
     clue1.setAttribute("title","account-notifications@" + clues[0] + ".com")
     var clue2tooltip = "https://www." + clues[0] + ".com/user/password/set?passwordResetToken=" + Math.ceil(Math.random() * 10000000) + 
-                        "email=" + "playerName";
+                        "email=" + localStorage.getItem('user-name');
     clue2.setAttribute("title", clue2tooltip);
     if(clues[0] == "Overleaf"){
       clue2.setAttribute("style", "background-color: #54c654");
@@ -37,6 +37,6 @@ window.addEventListener('message', (event) => {
     }
 
     clue3.innerHTML = clue2tooltip;
-    clue4.setAttribute("title", "https://www." + clues[0] + ".com/user/settings/user=" + "playerName");
+    clue4.setAttribute("title", "https://www." + clues[0] + ".com/user/settings/user=" + localStorage.getItem('user-name'));
   }
 );
