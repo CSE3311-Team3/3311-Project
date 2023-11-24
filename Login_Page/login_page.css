@@ -16,7 +16,7 @@ body {
     flex: 1;
     justify-content: space-between;
     align-items: center;
-    border: 8px solid gray;
+    border: 8px solid #165191
 }
 .header{
     font-size: 3rem;
@@ -24,15 +24,18 @@ body {
     left:0;
     right:0;
     text-align: center;
+    font-family: 'Courier New', Courier, monospace;
 }
 .instructions{
     text-align: center;
     font-size: 1.5rem;
 }
 .prePAT{
+    background-color: #165191;
     margin-top: 2rem;    
     cursor: pointer;
     font-size: 1.2rem;
+    color: white;
 }
 .PAT{
     display: none;
@@ -41,9 +44,9 @@ body {
     padding: 40px;
     background-color: white;
     border-radius: 5px;
-    justify-content: space-between;
+   
     align-items: center;
-    border: 8px solid gray;
+    border: 8px solid #165191;
 }
 .password-strength-box{
     color: white;

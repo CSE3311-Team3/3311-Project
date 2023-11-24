@@ -63,8 +63,9 @@ export class Email {
           	switch(quest_num){
                 case 1:
                     phish_emails.push(quest_num);
-                    this.context = "Phish template 1 context";
-                    this.explanation = "Phish template 1 explanation";
+                    this.context = "You are a Verizon customer who uses auto-pay to take care of your monthly phone bill.";
+                    this.explanation = "Hovering over the sender email reveals it is a spoofed email address. Also, "
+                    + "phish emails often use threats as motivation and usually give a false sense of urgency."
                     return "./Phish_Emails/template1/email_template.html";
                 case 2:
                     phish_emails.push(quest_num);
