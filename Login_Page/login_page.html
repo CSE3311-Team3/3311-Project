@@ -6,32 +6,39 @@
 
 <body>
     <h1 class="header">Welcome!</h1>
-
-    <p class="upper-text">
-        Your username is retained for the duration of your game, but the entered password is never stored.<br> 
-        It is only used to assess its strength. This step can be skipped.
-    </p>
+    
+    <div class="instructions">
+        <p>Enter a name to get started or try out our password assessment tool!<br> 
+            Or just click Skip to jump right in.
+        </p>
+    </div>
 
     <div class="container">
-        <h1></h1>
-        <form>
+        
         <!-- Username -->
-        <label for="username">Username:&nbsp;</label>
-        <input type="text" id="username" name="username" ><br><br>
-
-        <!-- Password -->
-        <label for="password">Password:&ensp;</label>
-        <input type="password" id="password" name="password"><br><br>
+        <label for="username" >Enter a name:&nbsp;</label>
+        <input style="height:20px;" type="text" id="username" name="username" ><br><br>
 
         <!-- Buttons -->
-        <button type="button" id="submitButton">Submit</button>
-        <button type ="button" id="skipButton">Skip</button>
-        <button type="button" id="toggleButton">Show Password</button>
-        </form>
+        <button style="font-size: 1rem;cursor: pointer;" type="button" id="submitButton">Submit</button>
+        <button style="font-size: 1rem;cursor: pointer;" type ="button" id="skipButton">Skip</button>
+    </div>
 
+    
+    <button class="prePAT" type="button" id="prePATbutton">Password Assessment Tool</button>
+    
+        
+    <div class="PAT" id="PAT">
+        <!-- Password -->
+        <label for="password">Enter a password:&ensp;</label>
+        <input style="height:20px;" type="password" id="password" name="password">
+
+        <button style="font-size: 1rem;cursor: pointer;"type="button"id="toggleButton">Show Password</button>
     </div>
 
     <div class="password-strength-box" id="password-strength-box"></div>
+
+    
 
     <script type="module" src="login_page.js"></script>
 
