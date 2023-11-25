@@ -74,18 +74,22 @@ export class Email {
                     return "./Phish_Emails/template2/email_template2.html";
                 case 3:
                     phish_emails.push(quest_num);
-                    this.context = "Phish template 3 context";
-                    this.explanation = "Phish template 3 explanation";
+                    this.context = "You have a PayPal account, but you have not used it in months.";
+                    this.explanation = "The goal of this phish email is to give the victim a sense of urgency so that they will"
+                    + "call the number listed and potentially be the victim of a phone scam. Also, if you hover over the sender, you can see that"
+                    + "the email is spoofed.";
                     return "./Phish_Emails/template3/email_template3.html";
                 case 4:
                     phish_emails.push(quest_num);
-                    this.context = "Phish template 4 context";
-                    this.explanation = "Phish template 4 explanation";
+                    this.context = "You have a LinkedIn account that you update regularly.";
+                    this.explanation = "While this email is kind of believable in that there are no threats or obvious scam requests,"
+                    + "the sender email is spoofed, and if you hover over the link in the body, it does not go to LinkedIn.com.";
                     return "./Phish_Emails/template4/email_template4.html";
                 case 5:
                     phish_emails.push(quest_num);
-                    this.context = "Phish template 5 context";
-                    this.explanation = "Phish template 5 explanation";
+                    this.context = "You do all of your banking with CHASE";
+                    this.explanation = "The sender email is spoofed, and if you check the URL for the embedded link, it points to some "
+                    + "alternative website."
                     return "./Phish_Emails/template5/email_template5.html";
                 case 6:
                     phish_emails.push(quest_num);
@@ -155,7 +159,7 @@ export class Email {
                     this.explanation = "This is a real email because the addresses used throughout the email appear to be from who the sender says they are." +
                             " None of the address in any of the links are from another third-party. There are no obvious mistakes in the grammar." +
                             " If you'd also recently made a password change request for the given account, then this email would also be expected." +
-                            " If this email was sent completely out of the blue, that's a big sign that this is a phishing attempt."
+                            " If this email was sent completely out of the blue, that's a big sign that this is a phishing attempt.";
                         //Return filepath for template
                     return "./Real_Emails/template" + quest_num + "/template" + quest_num +".html";
                 case 2: 
@@ -170,7 +174,7 @@ export class Email {
                         " Address on all the links appear to be from who the sender claims to be." + 
                         " It's also a normally expected email as you have an account from " + this.clues[0] +
                         " and its usual time they send statements." + " As a precaution, you can also view the statement directly from" + 
-                        this.clues[0] + "'s website instead of using the links provided here."
+                        this.clues[0] + "'s website instead of using the links provided here.";
                     return "./Real_Emails/template" + quest_num + "/template" + quest_num +".html";
                 case 3:
                     real_emails.push(quest_num);
@@ -190,22 +194,34 @@ export class Email {
                     this.explanation = "This is a real email. The first evidence for legitimacy are how links appear to be from " +
                         "whole the sender says they are. Remember, you can usually check links without having to click them by hovering " +
                         "your cursor over them. Another piece of evidence is how there are no major errors in grammar within the message." +
-                        " However, perfect grammar is not undeniable proof that an email isn't malicious."
+                        " However, perfect grammar is not undeniable proof that an email isn't malicious.";
                     return "./Real_Emails/template" + quest_num + "/template" + quest_num +".html";    
                 case 4:
                     real_emails.push(quest_num);
                     // Adding Context
-                    this.context = "real template 4 context";
+                    this.context = "You are a junior employee at Goldman Sachs. You and your supervisor, Emily Johnson, "
+                    + "have been working on a project that involves confidential financial records from a large number of your clients, "
+                    + "and the deadline is days away.";
+                    this.explanation = "This is a real email. "
+                    + "A couple of clues are that the email mentions very specific information that only you and your coworker would know about, "
+                    + "the sender's email is a real gmail account, and finally the sender asks for you to encrypt the file. Any attacker probably "
+                    + "wouldn't want encrypted data. This isn't good practice, and is probably against company policy, but it is still a real email.";
                     return "./Real_Emails/template4/email_template4.html";
                 case 5:
                     real_emails.push(quest_num);
                     // Adding Context
-                    this.context = "real template 5 context"
+                    this.context = "You are a UTA student that receives several emails from your school each day, "
+                    + "most of which are alerting you to school related events or alerts. ";
+                    this.explanation = "This is a real email. One clue is that the sender's email has not been spoofed and is a real .edu address. "
+                    + "Another clue is that the link supplied is directed to a real UTA website.";
                     return "./Real_Emails/template5/email_template5.html";
                 case 6:
                     real_emails.push(quest_num);
                     // Adding Context
-                    this.context = "real template 6 context";
+                    this.context = "You are a corporate employee working for Amazon who is required to attend many different "
+                    + "meetings throughout the week. Your production manager's name is Stella Baker.";
+                    this.explanation = "This is a real email. The sender's email is a valid amazon email address and the RSVP link points to a real"
+                    + " meeting invite.";
                     return "./Real_Emails/template6/email_template6.html";
                 case 7:
                     real_emails.push(quest_num);
