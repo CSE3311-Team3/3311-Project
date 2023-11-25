@@ -34,6 +34,7 @@ function togglePAT(){
     var buttonToDisable = document.getElementById("prePATbutton");
     
     pat.style.display = "flex";
+    buttonToDisable.style.cursor = "auto";
     buttonToDisable.disabled = "true";
 }
 
