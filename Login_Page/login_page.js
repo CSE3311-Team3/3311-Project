@@ -7,12 +7,14 @@ const passwordStrength = document.getElementById("password-strength-box");
 const passwordToggle = document.getElementById("toggleButton");
 const submitInput = document.getElementById("submitButton");
 const skipInput = document.getElementById("skipButton");
+const prePAT = document.getElementById("prePATbutton");
 
 
 passwordInput.addEventListener("input", checkPasswordStrength);
 passwordToggle.addEventListener("click", togglePassword);
 submitInput.addEventListener("click", getLogin);
 skipInput.addEventListener("click", skipLogin);
+prePAT.addEventListener("click", togglePAT);
 
 
 
@@ -24,6 +26,16 @@ function togglePassword() {
     } else {
         passwordInput.type = "password"; // Hide the password
     }
+}
+
+// This function sets the visibility of the password assessment tool div
+function togglePAT(){
+    var pat = document.getElementById("PAT");
+    var buttonToDisable = document.getElementById("prePATbutton");
+    
+    pat.style.display = "flex";
+    buttonToDisable.style.cursor = "auto";
+    buttonToDisable.disabled = "true";
 }
 
 // This function calculates the strength of the password entered by testing it against various 

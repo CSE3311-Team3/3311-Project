@@ -1,41 +1,55 @@
 body {
     background-color: rgba(37, 117, 136, 0.223);
-    display: flex;
+    display: grid;
+    place-items: center;
     justify-content: center;
     align-items: center;
-    height: 100vh;
-    margin: 0;
-    padding: 0;
+  
 }
 .container {
-    padding: 20px;
+    font-size: 1.5rem;
+    margin-top: 1.5rem;
+    padding: 40px;
     background-color: white;
     border-radius: 5px;
-    width: auto;
-    border: 8px solid gray;
-}
-.upper-text{
-    position: fixed;
-    top: 0;
-    padding: 90px;
-    text-align: center;
-    width: auto; 
+    display: flex;
+    flex: 1;
+    justify-content: space-between;
+    align-items: center;
+    border: 8px solid #165191
 }
 .header{
-    position: fixed;
+    font-size: 3rem;
     top:20px;
     left:0;
     right:0;
     text-align: center;
+    font-family: 'Courier New', Courier, monospace;
+}
+.instructions{
+    text-align: center;
+    font-size: 1.5rem;
+}
+.prePAT{
+    background-color: #165191;
+    margin-top: 2rem;    
+    cursor: pointer;
+    font-size: 1.2rem;
+    color: white;
+}
+.PAT{
+    display: none;
+    font-size: 1.5rem;
+    margin-top: 1.5rem;
+    padding: 40px;
+    background-color: white;
+    border-radius: 5px;
+   
+    align-items: center;
+    border: 8px solid #165191;
 }
 .password-strength-box{
-    position: absolute;
-    bottom: 20px;
-    max-width: 200px;
-    text-align: center;
-    margin-bottom: 90px;
-    font-weight: 300;
-    padding-left: 20px;
-    padding-right: 20px;
     color: white;
+    font-size: 1.5rem;
+    margin-top: 1rem;
 }
