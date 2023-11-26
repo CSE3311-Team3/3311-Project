@@ -13,13 +13,22 @@ window.addEventListener('message', (event) => {
 	var pics = document.getElementsByClassName("prof_pic");
 	var sender = document.getElementById("sender_name");
     
-	greet.innerHTML = "";
-	body.innerHTML = "";
-	salut.innerHTML = "";
-
-	for(var i = 0; i < pics.length; i++) {
-		pics[i].src = "images/prof_pics/sample_profpic.png";
+	if(clues[0]==0) {
+		greet.innerHTML = "";
+		body.innerHTML = "";
+		salut.innerHTML = "";
+		for(var i = 0; i < pics.length; i++) {
+			pics[i].src = "images/prof_pics/female_profpic.png";
+		}
+		sender.innerHTML = "";
 	}
-
-	sender.innerHTML = "_" + clues[2] + "_";
+	else if(clues[0]==1) {
+		greet.innerHTML = "";
+		body.innerHTML = "";
+		salut.innerHTML = "";
+		for(var i = 0; i < pics.length; i++) {
+			pics[i].src = "images/prof_pics/male_profpic.png";
+		}
+		sender.innerHTML = "";
+	}
 });
