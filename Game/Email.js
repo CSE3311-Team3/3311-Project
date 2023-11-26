@@ -53,10 +53,10 @@ export class Email {
   
   determineSource(phish_emails, real_emails){
         if (this.phish == false){
-            var quest_num = Math.floor(Math.random() * 8) + 1;
+            var quest_num = Math.floor(Math.random() * 12) + 1;
             while (phish_emails.find(o => o == quest_num)){
                 quest_num += 1;
-                if(quest_num == 9){
+                if(quest_num == 13){
                     quest_num = 1;
                 }
             }
@@ -126,15 +126,78 @@ export class Email {
                         " without thinking too much on the context." + 
                         "Its likely that this email was sent from another student account that fell for this phishing attack."
                     return "./Phish_Emails/template8/template8.html";
+                case 9:
+                    phish_emails.push(quest_num);
+                    this.clues.push(0);
+                    var senders = ["Owen","Gianna","Keith","Vanessa","Freddy","Carly"];
+                    num  = Math.floor(Math.random() * senders.length);
+                    this.clues.push(senders[num]);
+                    if(num%2 != 0) {
+                        this.clues.push("female");
+                    }
+                    else {
+                        this.clues.push("male");
+                    }
+                    var amount = Math.ceil((Math.floor(Math.random() * 7000) + 3000)/100) * 100;
+                    this.clues.push(amount);
+                    this.context = "Someone is messaging you about an opportunity to make money through their new cryptocurrency.";
+                    this.explanation = "This Instagram Direct Message is a phishing attempt because the sender is advertising"
+                    + " a get-rich-quick scheme in order to obtain critical information such as your bank account details and"
+                    + " social security number. If their cryptocurrency was somewhat legit, they would lead you to a reputable"
+                    + " crypto trading platform to purchase it and not ask you to directly send your information.";
+                    return "./Phish_Emails/template9/template9.html";
+                case 10:
+                    phish_emails.push(quest_num);
+                    this.clues.push(1);
+                    var senders = ["flex586","fly954","style0786","urban240","kicks4975"];
+                    num  = Math.floor(Math.random() * senders.length);
+                    this.clues.push(senders[num]);
+                    var amount = Math.ceil((Math.floor(Math.random() * 401) + 200)/10) * 10;
+                    this.clues.push(amount);
+                    this.context = "Someone is claiming that they can sell you high-end apparel for a single fixed price.";
+                    this.explanation = "This Instagram Direct Message is a scam because the sender wants you to send them money"
+                    + " without a guarantee that you will get the item you paid for. Furthermore, there is a slim chance that they"
+                    + " can actually obtain apparel that has not been officially released and different items would not all cost the same amount.";
+                    return "./Phish_Emails/template9/template9.html";
+                case 11:
+                    phish_emails.push(quest_num);
+                    this.clues.push(0);
+                    var first_three = Math.floor(Math.random() * (900) + 100);
+                    var second_three = Math.floor(Math.random() * (900) + 100);
+                    var last_four = Math.floor(Math.random() * (9000) + 1000);
+                    this.sender = "+1 " + "(" + first_three + ") " + second_three + "-" + last_four;
+                    this.clues.push(this.sender);
+                    this.context = "An unknown company is trying to sell you the latest iPhone model for a really cheap price.";
+                    this.explanation = "This text message is a most likely a scam because the sender never identifies themselves properly."
+                    + " We do not know exactly what company they are representing because they do not disclose that. Furthermore, they are"
+                    + " advertising a typically expensive product for an unrealistically cheap price and are asking you to send them your"
+                    + " card information through text which is never a good idea. The link given does not clearly point to a legitimate site"
+                    + " which is also a red flag.";
+                    return "./Phish_Emails/template10/template10.html";
+                case 12:
+                    phish_emails.push(quest_num);
+                    this.clues.push(1);
+                    var first_three = Math.floor(Math.random() * (900) + 100);
+                    var second_three = Math.floor(Math.random() * (900) + 100);
+                    var last_four = Math.floor(Math.random() * (9000) + 1000);
+                    this.sender = "+1 " + "(" + first_three + ") " + second_three + "-" + last_four;
+                    this.clues.push(this.sender);
+                    this.context = "An unknown sender is alerting you that the email company you use experienced a data leak and"
+                    + " is letting you know how you can keep your emails secure.";
+                    this.explanation = "This text message is definitely a phishing attempt because the sender never identifies themself,"
+                    + " and they are asking you to send them your email account access information. Furthermore, they never specify"
+                    + " what company experienced the data leak, and even if your email platform did, there would be no way to make your data secure"
+                    + " from that point on.";
+                    return "./Phish_Emails/template10/template10.html";
                 default:
                     return "default Phish";
             }
         }
         else {
-            var quest_num = Math.floor(Math.random() * 9) + 1; 
+            var quest_num = Math.floor(Math.random() * 12) + 1; 
             while (real_emails.find(o => o == quest_num)){
                 quest_num += 1;
-                if (quest_num == 10){
+                if (quest_num == 13){
                     quest_num = 1;
                 }
             }
@@ -271,6 +334,7 @@ export class Email {
                     return "./Real_Emails/template" + quest_num.toString() + "/template" + quest_num.toString() + ".html";
                 case 8:
                     real_emails.push(quest_num);
+                    this.clues.push(0);
                     var greetings = ["Hello","Good morning","Good afternoon","Good evening"];
                     var num = Math.floor(Math.random() * greetings.length);
                     this.clues.push(greetings[num]);
@@ -291,41 +355,81 @@ export class Email {
                     this.explanation = "This Instagram Direct Message is legit because the messenger is not trying to lead you to a page outside of Instagram"
                     + " and does not provide you with any external links. " + senders[num2] + " does not request any personal information, and you can safely"
                     + " click on their Instagram handle without putting your data at risk since Instagram is a secure platform.";
-                    return "./Real_Emails/template" + quest_num.toString() + "/template" + quest_num.toString() + ".html";
+                    return "./Real_Emails/template8/template8.html";
                 case 9:
                     real_emails.push(quest_num);
-                    var choice = Math.floor(Math.random() * 10000);
-                    if(choice%2==0) {
-                        this.clues.push(0);
-                        var schools = ["The University of Texas at Arlington","Baylor University","Texas Tech University","Texas A&M University"];
-                        var num = Math.floor(Math.random() * schools.length);
-                        this.clues.push(schools[num]);
-                        var alert_names = ["MavAlert","BearAlert","RaidAlert","RevAlert"];
-                        this.clues.push(alert_names[num]);
-                        var sender = Math.floor(Math.random() * 99999) + 10000;
-                        this.clues.push(sender);
-                        this.context =  schools[num] + " is sending out test alerts to ensure that their alert system works.";
-                        this.explanation = "This text message is legit because " + schools[num] + " is simply trying to alert you of something without"
-                        + " prompting you to click on any links or asking you to relay personal information. The sender is not asking anything of you.";
-                    }
-                    else {
-                        this.clues.push(1);
-                        var code = Math.floor(Math.random() * 999999) + 100000;
-                        this.clues.push(code);
-                        var companies = ["Venmo", "Cash App", "Zelle", "PayPal", "MoneyGram"];
-                        var num = Math.floor(Math.random() * companies.length);
-                        this.clues.push(companies[num]);
-                        var sender = Math.floor(Math.random() * 99999) + 10000;
-                        this.clues.push(sender);
-                        this.context = companies[num] + " is sending you a verification code after you have just created an"
-                        + " account on their platform or logged in after some time of inactivity.";
-                        this.explanation = "This text message is legit because you are receiving a verification code right after signing"
-                        + " up or logging into an application, which is normal. Furthermore, " + companies[num] + " is letting you know"
-                        + " that you can enter the code directly in their app which means the message is really coming from them. If it was a scammer, they"
-                        + " likely would have given you a weird link that does not directly lead to " + companies[num] + "'s" 
-                        + " website.";
-                    }
-                    return "./Real_Emails/template" + quest_num.toString() + "/template" + quest_num.toString() + ".html";
+                    this.clues.push(1);
+                    var senders = ["Joey","Lawrence","Aaron","Ivan","Dion"];
+                    var num = Math.floor(Math.random() * senders.length);
+                    this.clues.push(senders[num]);
+                    var genres = ["Gospel","Rock","R&B","Indie","Contemporary Christian","Pop","Hip Hop"];
+                    var num2 = Math.floor(Math.random() * genres.length);
+                    this.clues.push(genres[num2]);
+                    var rec_labels = ["UrbanHit","Rhythmic","RadSound","RealTune","TotalHarmony"];
+                    var num3 = Math.floor(Math.random() * rec_labels.length);
+                    this.clues.push(rec_labels[num3]);
+                    var songs = ["Breaking Free","No Limits","Good Energy","Time's Up","Here We Go","Truth Heals"];
+                    var num4 = Math.floor(Math.random() * songs.length);
+                    this.clues.push(songs[num4]);
+                    this.context = "A producer from a popular record label has discovered the music you have posted on your "
+                    + "Instagram page and is interested in recruiting you as an artist.";
+                    this.explanation = "This direct message is legit because the sender does not ask for any personal information, and"
+                    + " they are giving you the option to respond without pressuring you to.";
+                    return "./Real_Emails/template8/template8.html";
+                case 10:
+                    real_emails.push(quest_num);
+                    this.clues.push(0);
+                    var schools = ["The University of Texas at Arlington","Baylor University","Texas Tech University","Texas A&M University"];
+                    var num = Math.floor(Math.random() * schools.length);
+                    this.clues.push(schools[num]);
+                    var alert_names = ["MavAlert","BearAlert","RaidAlert","RevAlert"];
+                    this.clues.push(alert_names[num]);
+                    this.sender = Math.floor(Math.random() * 89999) + 10000;
+                    this.clues.push(this.sender);
+                    this.context =  schools[num] + " is sending out test alerts to ensure that their alert system works.";
+                    this.explanation = "This text message is legit because " + schools[num] + " is simply trying to alert you of something without"
+                    + " prompting you to click on any links or asking you to relay personal information. The sender is not asking anything of you.";
+                    return "./Real_Emails/template9/template9.html";
+                case 11:
+                    real_emails.push(quest_num);      
+                    this.clues.push(1);
+                    var code = Math.floor(Math.random() * 899999) + 100000;
+                    this.clues.push(code);
+                    var companies = ["Venmo", "Cash App", "Zelle", "PayPal", "MoneyGram"];
+                    var num = Math.floor(Math.random() * companies.length);
+                    this.clues.push(companies[num]);
+                    this.sender = Math.floor(Math.random() * 89999) + 10000;
+                    this.clues.push(this.sender);
+                    this.context = companies[num] + " is sending you a verification code after you have just created an"
+                    + " account on their platform or logged in after some time of inactivity.";
+                    this.explanation = "This text message is legit because you are receiving a verification code right after signing"
+                    + " up or logging into an application, which is normal. Furthermore, " + companies[num] + " is letting you know"
+                    + " that you can enter the code directly in their app which means the message is really coming from them. If it was a scammer, they"
+                    + " likely would have given you a weird link that does not directly lead to " + companies[num] + "'s" 
+                    + " website.";
+                    return "./Real_Emails/template9/template9.html";
+                case 12:
+                    real_emails.push(quest_num);
+                    this.clues.push(2);
+                    var companies = ["AT&T","Verizon","T-Mobile","Sprint","Spectrum"];
+                    var num = Math.floor(Math.random() * companies.length);
+                    this.clues.push(companies[num]);
+                    var confirm_num = Math.floor(Math.random() * 89999999999999) + 10000000000000;
+                    this.clues.push(confirm_num);
+                    var payment = (Math.random() * 990) + 10;
+                    this.clues.push(payment.toFixed(2));
+                    var date = "10/23/2023";
+                    this.clues.push(date);
+                    var account_num = Math.floor(Math.random() * 899999999999) + 100000000000;
+                    this.clues.push(account_num);
+                    this.sender = Math.floor(Math.random() * 89999) + 10000;
+                    this.clues.push(this.sender);
+                    this.context = "Your cellular service company is letting you know that your monthly payment went through "
+                    + "by giving you details about the transaction.";
+                    this.explanation = "This text message is legit because " + companies[num] + " is simply sending you the details"
+                    + " of your recent payment without requesting any additional information from you. " + companies[num] + " suggests"
+                    + " you visit their website rather than suggesting you click an unrelated link.";
+                    return "./Real_Emails/template9/template9.html";
                 default:
                     return "default Real";
 			}
