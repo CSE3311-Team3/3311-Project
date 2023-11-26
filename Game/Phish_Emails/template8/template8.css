@@ -1,1 +1,30 @@
-/* Need to implement */
+.para {
+    margin-bottom: 2em;
+}
+
+.login {
+    margin-bottom: 2em;
+    border-color: #0078d4;
+    border-style: solid;
+    background-color: #0078d4;
+    border-radius: 25px;
+    width: fit-content;
+    padding-left: 0.75em;
+    padding-right: 0.75em;
+    margin-right: auto;
+    margin-left: auto;
+    color:white;
+}
+
+.sideIndent {
+    margin-right: 5px;
+    margin-left: 5px;
+}
+
+.headerLineBreak {
+    border: 2px solid rgb(134,134,126);
+}
+
+.txtResize {
+    font-size: 1.5vw;
+}

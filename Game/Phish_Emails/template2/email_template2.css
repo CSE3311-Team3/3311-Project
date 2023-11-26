@@ -14,3 +14,24 @@
   color: rgb(3, 3, 3);
   margin-left: 10px;
 }
+
+.hyperlink {
+  color: #4183C4;
+}
+
+.hyperlink:hover {
+  text-decoration: underline;
+}
+
+.headerLineBreak {
+  border: 2px solid rgb(134,134,126);
+}
+
+.txtResize {
+  font-size: 1.5vw;
+}
+
+.sideIndent {
+  margin-right: 5px;
+  margin-left: 5px;
+}

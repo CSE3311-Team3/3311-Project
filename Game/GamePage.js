@@ -45,14 +45,12 @@ function createTestQuestions(TestQuestions){
 
 // Registers the 'Phish' button was clicked
 function phishClick() {
-	document.getElementById("ChoiceSelected").innerHTML = "Phish Button was selected.";
 	setting_answer(false);
 	buttonVisib();
 }
 
 // Registers the 'Real' button was clicked
 function realClick() {
-	document.getElementById("ChoiceSelected").innerHTML = "Real Button was selected.";
 	setting_answer(true);
 	buttonVisib();
 }
@@ -78,31 +76,16 @@ function setting_answer(choice) {
 
 // Registers the 'Next' question button was clicked
 function nextClick() {
-	tracking_answer();
+	checkAnswer();
 	updateQuestion("next");
 	closeExpl();
 }
 
 // Registers the 'Prev' question button was clicked
 function prevClick() {
-	tracking_answer();
+	checkAnswer();
 	updateQuestion("prev"); 
 	closeExpl();         
-}
-
-function tracking_answer() {
-	var quest_num = parseInt(document.getElementById("QuestionNumber").innerHTML);
-	var answer = answers.get(quest_num);
-	if(answer == false) {
-		document.getElementById("ChoiceSelected").innerHTML = "Phish Button was selected.";
-	}
-	else if(answer == true) {
-		document.getElementById("ChoiceSelected").innerHTML = "Real Button was selected.";
-	}
-	else {
-		document.getElementById("ChoiceSelected").innerHTML = "";
-	}
-	checkAnswer();
 }
 
 // Updates the display question on the GamePage

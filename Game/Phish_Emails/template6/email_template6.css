@@ -109,16 +109,8 @@
     position: absolute;
     z-index: 1;
 }
-.large_links:hover::after{
-    content: "https://puzz.biglist.com/go/1326/36333417505/4/17819/2";
-    font-weight: 600;
-    font-size: .8rem;
-    color: darkblue;
-    width: auto;
-    position: absolute;
-    z-index: 1;
-    border: solid;
-    background-color: rgb(227, 222, 222);
+.large_links:hover{
+    text-decoration: underline;
 }
 .small_links {
     font-family: Helvetica,Arial,sans-serif;
@@ -127,8 +119,8 @@
     color: blue;
     position: relative;
 }
-.small_links:hover::after {
-    content: "https://puzz.biglist.com/go/1326/36333417505/4/17819/2";
+.small_links:hover {
+    /* content: "https://puzz.biglist.com/go/1326/36333417505/4/17819/2";
     font-weight: 600;
     font-size: .8rem;
     color: darkblue;
@@ -136,7 +128,8 @@
     position: absolute;
     z-index: 1;
     border: solid;
-    background-color: rgb(227, 222, 222);
+    background-color: rgb(227, 222, 222); */
+    text-decoration: underline;    
 }
 .body_text {
     font-family: Helvetica,Arial,sans-serif;
@@ -160,3 +153,12 @@
     padding-top: 13px;
     padding-bottom: 10px;
 }
+
+.hyperlink {
+    color: blue;
+  }
+  
+.hyperlink:hover {
+    text-decoration: underline;
+}
+  

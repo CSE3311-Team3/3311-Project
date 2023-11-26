@@ -27,6 +27,15 @@
   text-decoration: underline;
 }
 
-.leftIndent {
+.sideIndent {
   margin-left: 5px;
+  margin-right: 5px;
+}
+
+.txtResize {
+  font-size: 1.5vw;
+}
+
+.headerLineBreak {
+  border: 2px solid rgb(134,134,126);
 }
