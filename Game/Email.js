@@ -52,6 +52,7 @@ export class Email {
     } 
   
   determineSource(phish_emails, real_emails){
+        // The email is a phish
         if (this.phish == false){
             var quest_num = Math.floor(Math.random() * 8) + 1;
             while (phish_emails.find(o => o == quest_num)){
@@ -68,8 +69,11 @@ export class Email {
                     return "./Phish_Emails/template1/email_template.html";
                 case 2:
                     phish_emails.push(quest_num);
-                    this.context = "Phish template 2 context";
-                    this.explanation = "Phish template 2 explanation";
+                    this.context = "You are an Amazon customer and have recently received an email regarding fradulent activity regarding your account.";
+                    this.explanation = "This email is a phishing attempt. The first sign is some grammatical errors seen through out the email." +
+                    "There are some capitalization errors and \"unsual\" is spelled wrong." + 
+                    " If you hover your cursor over the links, you'd notice they are shortened URLs, a common sign of a malicious link. " +
+                    " These types of phishing attempts also commonly threaten a user as in this case where \"we will have to terminate the account.\" ";
                     return "./Phish_Emails/template2/email_template2.html";
                 case 3:
                     phish_emails.push(quest_num);
@@ -120,8 +124,8 @@ export class Email {
                     this.context = "You are a university student and just received this email from another student. You have never met this student" +
                         " and haven't made any changes to your account."
                     this.explanation = "This is a phishing email for several reasons. First obvious reason is how this email was sent unwarranted from" +
-                        "someone you don't know. There are also several grammar/spelling mistakes that can be seen throughout the message." +
-                        "The address for the 'Login' link is also some sort of shortened URL, a common sign for malicious links." +
+                        " someone you don't know. There are also several grammar/spelling mistakes that can be seen throughout the message. " +
+                        "The address for the 'Login' link is also some sort of shortened URL, a common sign for malicious links. " +
                         "Attacks like these also usually threaten the user with some sort of time limit to push users to make quick decisions" +
                         " without thinking too much on the context." + 
                         "Its likely that this email was sent from another student account that fell for this phishing attack."
@@ -130,6 +134,7 @@ export class Email {
                     return "default Phish";
             }
         }
+        // The email is real
         else {
             var quest_num = Math.floor(Math.random() * 9) + 1; 
             while (real_emails.find(o => o == quest_num)){
@@ -216,7 +221,6 @@ export class Email {
                         "One Microsoft Way, Redmond, WA 98052, USA",
                         "770 Broadway, New York, NY 10003, USA"
                     ];
-                    var receiver_names = ["jasondoe","johndoe","janedoe","joanadoe"];
                     var months = ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];
                     var systems = ["Windows","Mac","Linux","Android","Apple iPhone"];
                     var meridiems = ["AM","PM"];
@@ -227,8 +231,8 @@ export class Email {
                     this.clues.push(email_names[num]);
                     this.clues.push(company_addresses[num]);
                     this.clues.push(img_paths[num]);
-                    num = Math.floor(Math.random() * receiver_names.length); 
-                    this.clues.push(receiver_names[num]);
+                    num = Math.floor(Math.random() * 100); 
+                    this.clues.push(localStorage.getItem('user-name') + num.toString());
                     num = Math.floor(Math.random() * months.length); 
                     this.clues.push(months[num]);
                     num = Math.floor(Math.random() * times.length);

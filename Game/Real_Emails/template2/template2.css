@@ -27,6 +27,18 @@
   padding: 5px;
 }
 
+.headerLineBreak {
+  border: 2px solid rgb(134,134,126);
+}
+
 .lineBreak {
   border: 2.5px solid rgb(164, 172, 7);
+}
+
+.leftIndent {
+  margin-left: 5px;
+}
+
+.txtResize {
+  font-size: 1.5vw;
 }

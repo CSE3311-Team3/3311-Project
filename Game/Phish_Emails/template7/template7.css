@@ -1,3 +1,16 @@
 .hyperlink {
   color: #4183C4;
 }
+
+.sideIndent {
+  margin-left: 5px;
+  margin-right: 5px
+}
+
+.hyperlink:hover {
+  text-decoration: underline;
+}
+
+.txtResize {
+  font-size: 1.5vw;
+}

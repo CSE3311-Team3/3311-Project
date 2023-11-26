@@ -17,6 +17,10 @@
   color: #4183C4;
 }
 
+.hyperlink:hover {
+  text-decoration: underline;
+}
+
 .boldText {
   font-weight: bolder;
 }
@@ -27,4 +31,17 @@
 
 .subjectLine {
   font-size: 20px;
+}
+
+.headerLineBreak {
+  border: 2px solid rgb(134,134,126);
+}
+
+.txtResize {
+  font-size: 1.5vw;
+}
+
+.sideIndent {
+  margin-left: 5px;
+  margin-right: 5px;
 }
