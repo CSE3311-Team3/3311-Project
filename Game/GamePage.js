@@ -31,9 +31,10 @@ window.addEventListener('load', () => {
 	document.getElementById("Next_button").addEventListener("click", nextClick);
 	document.getElementById("Prev_button").addEventListener("click", prevClick);
 	document.getElementById("close_expl").addEventListener("click", closeExpl);
-        document.getElementById("Explan_button").addEventListener("click", setExpl);
+  document.getElementById("Explan_button").addEventListener("click", setExpl);
 	document.getElementById("QuestionNumber").innerHTML = QuestionNumber;
 	document.getElementById("high_score").innerHTML = CurrentScore;
+	localStorage.setItem("high-score", CurrentScore);
 })  
 
 // Creates the test questions
