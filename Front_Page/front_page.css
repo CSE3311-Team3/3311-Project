@@ -20,18 +20,32 @@ body
     width: 20rem;
     cursor: pointer;
     text-align:center;
-    font-size: 36px;
+    font-size: 45px;
     font-family: 'Courier New', Courier, monospace;
 }
-.button2
+#howToPlay
 {
-    background-color: #165191;
-    color: white;
-    padding: 1.5rem;
-    margin-top: 2rem;
-    width: 20rem;
-    cursor: pointer;
-    text-align:center;
+    color: black;
+    margin-top: 5rem;
+    padding-left: 15px;
+    text-align: left;
     font-size: 36px;
     font-family: 'Courier New', Courier, monospace;
+    font-weight: 600;
+    margin-bottom: 0px;
+    max-width: 60%;
+    width: 60%;
+
+}
+#instructions {
+    max-width: 60%;
+    font-family: Courier, monospace;
+    font-weight: 500;
+    margin-top: 0px;
+    font-size: 19px;
+
+}
+.instruction {
+    margin-top: 10px;
+    margin-bottom: 10px;
 }
