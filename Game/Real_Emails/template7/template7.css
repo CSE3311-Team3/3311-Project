@@ -71,18 +71,6 @@
 .receiver_hover {
     display: none;
 }
-.receiver:hover + .receiver_hover {
-    display: block;
-    font-weight: 500;
-    font-size: .8rem;
-    color: rgb(81, 7, 81);
-    margin-left: 10px;
-    border-radius: 5px;
-    border-color: transparent;
-    border-style: groove;
-    border-width: 3px;
-    background-color: #dadce0;
-}
 .body_area {
     width: 70%;
     height: 60vh;
