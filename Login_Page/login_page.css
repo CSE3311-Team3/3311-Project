@@ -44,7 +44,6 @@ body {
     padding: 40px;
     background-color: white;
     border-radius: 5px;
-   
     align-items: center;
     border: 8px solid #165191;
 }
@@ -52,4 +51,23 @@ body {
     color: white;
     font-size: 1.5rem;
     margin-top: 1rem;
+}
+#submitButton {
+    font-size: 1.3rem;
+    cursor: pointer;
+    font-family: 'Times New Roman', Times, serif;
+    margin: 15px;
+    background-color: #165191;
+    border-radius: 3px;
+    padding: 5px;
+    color: white;
+}
+#skipButton {
+    font-size: 1.3rem;
+    cursor: pointer;
+    font-family: 'Times New Roman', Times, serif;
+    background-color: #165191;
+    border-radius: 3px;
+    padding: 5px;
+    color: white;
 }
