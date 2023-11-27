@@ -19,14 +19,14 @@ body
 }
 .button
 {
-    
     background-color: #165191;
     color: white;
     padding: 1.5rem;
+    margin: 2.5rem;
     width: 20rem;
     cursor: pointer;
     text-align:center;
-    font-size: 36px;
+    font-size: 40px;
     font-family: 'Courier New', Courier, monospace;
-    
+    font-weight: 600;
 }
