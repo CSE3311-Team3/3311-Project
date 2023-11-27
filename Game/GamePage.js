@@ -25,15 +25,15 @@ window.addEventListener('load', () => {
 		sendQuestionToIframe();
 	};    
 
+	document.getElementById("Context").innerHTML = TestQuestions[QuestionNumber - 1].getContext;
 	document.getElementById("Phish_button").addEventListener("click", phishClick);
 	document.getElementById("Real_button").addEventListener("click", realClick);
 	document.getElementById("Next_button").addEventListener("click", nextClick);
 	document.getElementById("Prev_button").addEventListener("click", prevClick);
 	document.getElementById("close_expl").addEventListener("click", closeExpl);
-  document.getElementById("Explan_button").addEventListener("click", setExpl);
+        document.getElementById("Explan_button").addEventListener("click", setExpl);
 	document.getElementById("QuestionNumber").innerHTML = QuestionNumber;
 	document.getElementById("high_score").innerHTML = CurrentScore;
-	document.getElementById("Context").innerHTML = TestQuestions[QuestionNumber - 1].getContext;
 })  
 
 // Creates the test questions
