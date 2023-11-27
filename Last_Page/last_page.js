@@ -13,5 +13,12 @@ function game_play()
 {
   window.location.href = "../Login_Page/login_page.html";
 }
+
+//Reset the high score to zero
+function reset_score()
+{
+  localStorage.setItem('high-score', 0);
+}
+
 //click sound when then user clicks the button.
 button.addEventListener("click",game_play);
