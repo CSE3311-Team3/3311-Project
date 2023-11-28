@@ -71,3 +71,12 @@ body {
     padding: 5px;
     color: white;
 }
+#toggleButton{
+    font-size: 1.3rem;
+    cursor: pointer;
+    font-family: 'Times New Roman', Times, serif;
+    background-color: #165191;
+    border-radius: 3px;
+    padding: 5px;
+    color: white;
+}

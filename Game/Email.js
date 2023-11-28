@@ -71,22 +71,22 @@ export class Email {
                 case 2:
                     phish_emails.push(quest_num);
                     this.context = "You are an Amazon customer and have recently received an email regarding fradulent activity regarding your account.";
-                    this.explanation = "This email is a phishing attempt. The first sign is some grammatical errors seen through out the email." +
+                    this.explanation = "This email is a phishing attempt. The first sign is some grammatical errors seen through out the email. " +
                     "There are some capitalization errors and \"unsual\" is spelled wrong." + 
-                    " If you hover your cursor over the links, you'd notice they are shortened URLs, a common sign of a malicious link. " +
+                    " If you hover your cursor over the links, you'd notice they are shortened URLs, a common sign of a malicious link." +
                     " These types of phishing attempts also commonly threaten a user as in this case where \"we will have to terminate the account.\" ";
                     return "./Phish_Emails/template2/email_template2.html";
                 case 3:
                     phish_emails.push(quest_num);
                     this.context = "You have a PayPal account, but you have not used it in months.";
-                    this.explanation = "The goal of this phish email is to give the victim a sense of urgency so that they will"
-                    + "call the number listed and potentially be the victim of a phone scam. Also, if you hover over the sender, you can see that"
+                    this.explanation = "The goal of this phish email is to give the victim a sense of urgency so that they will "
+                    + "call the number listed and potentially be the victim of a phone scam. Also, if you hover over the sender, you can see that "
                     + "the email is spoofed.";
                     return "./Phish_Emails/template3/email_template3.html";
                 case 4:
                     phish_emails.push(quest_num);
                     this.context = "You have a LinkedIn account that you update regularly.";
-                    this.explanation = "While this email is kind of believable in that there are no threats or obvious scam requests,"
+                    this.explanation = "While this email is kind of believable in that there are no threats or obvious scam requests, "
                     + "the sender email is spoofed, and if you hover over the link in the body, it does not go to LinkedIn.com.";
                     return "./Phish_Emails/template4/email_template4.html";
                 case 5:
