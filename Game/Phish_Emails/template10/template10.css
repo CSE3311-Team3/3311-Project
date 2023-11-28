@@ -1,3 +1,7 @@
+body {
+    display: flex;
+    justify-content: center;
+}
 #phone_screen {
     justify-content: center;
     align-items: center;
