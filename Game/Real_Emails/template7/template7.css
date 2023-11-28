@@ -161,3 +161,7 @@
     font-size: 11.5px;
     margin: auto;
 }
+
+.txtResize{
+    font-size:1.25vw;
+}

@@ -18,4 +18,5 @@ window.addEventListener('load', () => {
   document.getElementById("clue13").setAttribute('title', small_link);
   document.getElementById("clue14").setAttribute('title', small_link);
   document.getElementById("clue15").setAttribute('title', small_link);
+  
 });

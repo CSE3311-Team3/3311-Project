@@ -53,7 +53,7 @@ window.addEventListener('message', (event) => {
     }
 
     var email_addr = clues[4] + "@" + clues[1] + ".com";
-    var receiver_hover = document.getElementsByClassName("receiver_hover");
+    var receiver_hover = document.getElementsByClassName("receiver");
     receiver_hover[0].innerHTML = email_addr;
     
 });
