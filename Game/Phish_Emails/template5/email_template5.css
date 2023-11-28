@@ -59,24 +59,6 @@ body {
     
   }
 
-  /* NOT NEEDED FOR THIS TEMPLATE
-  .attachment-details {
-    display: inline-block;
-    padding: 5px;
-    
-    font-size: 12px;
-    cursor: pointer;
-  }
-  
-  
-  /* NOT NEEDED FOR THIS TEMPLATE
-  
-  .attachment-details:hover::after {
-    content: "October_Bill.zip";
-    background-color: yellow;
-    border: groove;
-    font-weight: bold;
-    color: rgb(3, 3, 3);
-    margin-left: 10px;
-  }
-  */
+.txtResize{
+  font-size: 1.5vw;
+}

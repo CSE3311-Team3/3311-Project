@@ -31,6 +31,7 @@ body {
   .from-details {
     cursor: pointer;
   }
+  
   .from-details:hover::after {
     content: "em.johnson@gmail.com";
     background-color: yellow;
@@ -42,40 +43,6 @@ body {
     position: absolute;
   }
 
-  /* NOT NEEDED FOR THIS TEMPLATE 
-  .link-details {
-    cursor: pointer;
-    color: rgb(61, 99, 239);
-    text-decoration: underline;
+  .txtResize {
+    font-size: 1.5vw;
   }
-  .link-details:hover::after {
-    content: "http://bit.ly/PaYY";
-    background-color: yellow;
-    border: groove;
-    font-weight: bold;
-    color: rgb(3, 3, 3);
-    margin-left: 10px;
-    z-index: 1;
-    position: absolute;
-    
-  } */
-
-  /* NOT NEEDED FOR THIS TEMPLATE
-  .attachment-details {
-    display: inline-block;
-    padding: 5px;
-    
-    font-size: 12px;
-    cursor: pointer;
-  }
-  
-  /* NOT NEEDED FOR THIS TEMPLATE
-  .attachment-details:hover::after {
-    content: "October_Bill.zip";
-    background-color: yellow;
-    border: groove;
-    font-weight: bold;
-    color: rgb(3, 3, 3);
-    margin-left: 10px;
-  }
-  */

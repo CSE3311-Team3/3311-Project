@@ -42,3 +42,7 @@
 .txtResize {
   font-size: 1.5vw;
 }
+
+.txtResizeBigger {
+  font-size: 2vw;
+}

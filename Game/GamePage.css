@@ -214,3 +214,7 @@
   right: 15px;
   font-family: 'Courier New', Courier, monospace
 }
+
+.resizeTxt {
+  font-size:1.25vw;
+}
